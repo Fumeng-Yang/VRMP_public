@@ -31,3 +31,5 @@ The logged movements and events from the HMD.
 
 The main (entry) file is main.R. All the dependencies have been specified in helper.R.
 
+The R scripts take the inputs from the data folder.
+
