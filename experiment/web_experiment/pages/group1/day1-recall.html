@@ -1,0 +1,51 @@
+<div id="firstboard">
+    <h1> Part
+        <span id="partx">4</span> - Recall </h1>
+    <p>
+        You just finished reading all the abstracts. Take a break.
+    </p>
+    <p> Now, we ask you to recall and write down the content you just read
+        <b>as completely as possible</b>.
+    </p>
+    <p>
+        The tasks for your are,
+        <br>
+        <b>1) Write your recall of each passage separately, using the
+            <q>Memory Palace</q> method.</b>
+        <br>
+        <b>2) Sort them in the original order you saw. </b>
+        <br>
+        <b>3) Rate how vivid an illustration is.</b>
+    </p>
+    <p>
+        <u>To repeat the recalling guidelines</u>:
+        <br> <b>Please recall by
+        imagining you see the coffee shop, walking through the route, and trying to pick up the connections (visualizations) between
+            the locations and the passages. </b> What is it about? What are details in the visualization that reflect the
+        passage you read? In your recall, it is NOT necessary to reproduce the original wording. We want to see what and
+        how much you can remember when you read the passages once for careful understanding.
+        We don't check spelling and grammar, as long as we can recognize what you mean.
+    </p>
+
+    <p>
+        If you are ready, please click the
+        <q>Next</q> button to proceed to the recall page.
+        <br> You have up to
+        <b>30 min</b> in the recall task on next page.
+    </p>
+</div>
+
+<div id="secondboard" style="display:none;">
+    Write down what you can remember in each of the entries. Drag the entries to reorder them. You still have
+    <span id="timer">30</span> min.
+    <ul id="sortable">
+    </ul>
+</div>
+
+<button id="next-button">Next</button>
+
+<script>
+    setTimeout(function () {
+        setupRecall("day1Recall", settings.target_abstracts)
+    }, experimentSettings.loadingTime)
+</script>

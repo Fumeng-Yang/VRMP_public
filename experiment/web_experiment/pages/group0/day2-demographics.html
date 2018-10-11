@@ -1,0 +1,144 @@
+<h1> Part <span id ="partx">0</span> - Demographics </h1>
+<p>Thanks you so much for finishing all the tasks. At the end, please tell us more about yourself and how you think about the study.</p>
+<ol id = "demographics_questions">
+    <li id = "demo_ages"> <span> Please indicate your age: 
+            <select id = "age" value = "25">
+            </select></span>
+        </span>
+    </li>
+    <li id = "demo_gender"> Please indicate your gender: <br>      
+        <input type = "radio" name="gender" value="female">Female
+        <input type = "radio" name="gender" value="male">Male
+        <input type = "radio" name="gender" value="prefer_not">Prefer not to say
+    </li>    
+    <li id = "demo_majors">Please indicate your major(s):   <br>    
+        <textarea id = "majors" cols="80" rows="1" style="resize:none;"></textarea>
+    </li>
+    <li id = "demo_ability">
+       How do you think about your visuospatial memory and imageability? <br>
+       <input type = "radio" name="visuospatial" value="very_good">Very good
+       <input type = "radio" name="visuospatial" value="better_than_average">Better than average
+       <input type = "radio" name="visuospatial" value="average">Just average
+       <input type = "radio" name="visuospatial" value="not_very_good_at">I'm not very good at it
+    </li>
+     <li id = "demo_remeberingtext">
+       How do you think about your ability to remember text? <br>
+       <input type = "radio" name="text_ability" value="very_good">Very good
+       <input type = "radio" name="text_ability" value="better_than_average">Better than average
+       <input type = "radio" name="text_ability" value="average">Just average
+       <input type = "radio" name="text_ability" value="not_very_good_at">I'm not very good at it
+    </li>
+    <li id = "demo_motionsickness">
+            Do you think you are a wordy person? <br>
+            <input type = "radio" name="wordiness" value="simple">I keep everything simple
+            <input type = "radio" name="wordiness" value="neutral">Neutral
+            <input type = "radio" name="wordiness" value="wordy">Somewhat wordy
+            <input type = "radio" name="wordiness" value="very_wrody">Add as many words as I can!
+    </li>
+    <li id = "demo_motionsickness">
+       Do you have motion sickness/simulator sickness? <br>
+       <input type = "radio" name="motion_sickness" value="none">None
+       <input type = "radio" name="motion_sickness" value="slight">Slight
+       <input type = "radio" name="motion_sickness" value="moderate">Moderate
+       <input type = "radio" name="motion_sickness" value="severe">Severe
+    </li>
+
+    <li id = "demo_english">
+       How do you describe you English proficiency? <br>
+       <input type = "radio" name="english_proficiency" value="native">Native or bilingual proficiency    
+       <input type = "radio" name="english_proficiency" value="full_professional">Full professional proficiency    
+       <input type = "radio" name="english_proficiency" value="professional">Professional working proficiency
+       <input type = "radio" name="english_proficiency" value="limited_working">Limited working proficiency
+       <input type = "radio" name="english_proficiency" value="elementary">Elementary proficiency
+    </li>
+    <li id = "demo_saw">
+        Did you read any of the abstracts before?
+        <br>
+        <textarea id = "previous_reading" cols="80" rows="5" style="resize:none;"></textarea>
+    </li>
+
+    <li id = "demo_mnemonic">
+       Did you use any mnemonic to remember the abstracts? In other words, did you use any means to help you remember?
+       <br>
+       <textarea id = "mnemonic_method" cols="80" rows="5" style="resize:none;"></textarea>
+    </li>
+     <li id = "demo_extra">
+       Anything else you wanna tell us? <br>
+       <textarea id = "extra_comment" cols="80" rows="5" style="resize:none;"></textarea>
+    </li>
+</ol>
+<p id="warning"></p>
+
+<button id = "next-button">Next</button>
+<script>
+    (function(){
+        var demographicsStartTime = new Date().getTime()
+
+        d3.select("#age")
+            .selectAll("option")
+            .data(new Array(50))
+            .enter()
+            .append("option")
+            .attr("value", function(d, i){return (i+16)})
+            .text(function(d, i){return (i+16)})
+        
+        d3.selectAll("li")
+        .style("margin", "10px")
+
+        d3.select("#next-button")
+        .on("click", function(){
+            d3.select("#warning")
+              .text("Please answer all the questions.")
+
+            var demographics = {}
+
+            demographics.age = d3.select("#age").node().value
+            demographics.majors = d3.select("#majors").node().value
+            if(d3.select('input[name="gender"]:checked').node())
+                demographics.gender = d3.select('input[name="gender"]:checked').node().value
+            
+            if(d3.select('input[name="visuospatial"]:checked').node())
+                demographics.visuospatial = d3.select('input[name="visuospatial"]:checked').node().value
+
+             if(d3.select('input[name="wordiness"]:checked').node())
+                demographics.wordiness = d3.select('input[name="wordiness"]:checked').node().value
+            
+            if(d3.select('input[name="text_ability"]:checked').node())
+                demographics.text_ability = d3.select('input[name="text_ability"]:checked').node().value
+            
+            if(d3.select('input[name="motion_sickness"]:checked').node())
+                demographics.motion_sickness = d3.select('input[name="motion_sickness"]:checked').node().value
+            
+            if(d3.select('input[name="english_proficiency"]:checked').node())
+                demographics.english_proficiency = d3.select('input[name="english_proficiency"]:checked').node().value
+
+            demographics.mnemonic_method = d3.select('#mnemonic_method').node().value
+            demographics.extra_comment = d3.select('#extra_comment').node().value
+            demographics.previous_reading = d3.select('#previous_reading').node().value
+
+            if( globalDebugging || 
+                (demographics.age && demographics.age != null &&
+                demographics.gender && demographics.gender != null &&
+                demographics.majors && demographics.majors != null &&
+                demographics.visuospatial && demographics.visuospatial != null &&
+                demographics.wordiness && demographics.wordiness != null &&
+                demographics.text_ability && demographics.text_ability != null &&
+                demographics.motion_sickness && demographics.motion_sickness != null &&
+                demographics.english_proficiency && demographics.english_proficiency != null &&
+                demographics.mnemonic_method && demographics.mnemonic_method != null &&
+                demographics.previous_reading && demographics.previous_reading != null
+            )){
+                   d3.select("#warning").text("")
+
+                    var demographicsEndTime = new Date().getTime()
+                    data['timeStamps']['demographicsTime'] = demographicsEndTime - demographicsStartTime
+                    data['timeStamps']['demographicsEndTime'] = demographicsEndTime 
+                    data['timeStamps']['demographicsStartTime'] = demographicsStartTime
+                    data['timeStamps']['demographics'] = demographics
+                    nextPage()
+               }
+        })
+
+    }())
+   
+</script>

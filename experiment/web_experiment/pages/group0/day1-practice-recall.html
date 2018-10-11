@@ -1,0 +1,20 @@
+<div id="firstboard">
+        <h1> Part 
+         <span id ="partx">0</span> - Practice Session 
+        </h1>
+        <p>
+            <b> Now, recall and write down the passage you just read as completely as possible</b>. 
+        </p>
+        <p>
+            If you are ready, please proceed to the recall page.
+        </p>
+</div>
+<div id="secondboard" style="display:none;">Write down what you can remember in the entry.
+        <ul id="sortable"></ul>
+</div>
+<button id="next-button">Next</button>
+<script>
+        setTimeout(function() {
+            setupRecall("practiceRecall", practiceData.practice_abstract)
+        }, experimentSettings.loadingTime)
+</script>

@@ -1,0 +1,50 @@
+<h1>Part
+    <span id="partx">0</span> - Practice Session</h1>
+
+<div id="firstboard" class="board">
+    <p>
+        Thanks, you passed! Next, you will practice the memory palace method with one passage.
+        <br> You will read the passage, associate it to a target location we provide, write down your recall, and finish a small recognition
+        task.</p>
+    </p>
+    <p>
+        When you are ready, click
+        <q>Next</q> to proceed.
+    </p>
+</div>
+<div class="board" id="secondboard" style="display:none;">
+    <img src="../files/table_scene.png" alt="practice picture" width="100%">
+    <p>
+        A desk and a window. We want you to imagine that you are inside the above picture.
+        <br> Imagine yourself are standing in the picture, facing the desk and the window. There are some items put on the desk.
+    </p>
+    <p>
+        You don't have to imagine all the details (e.g., materials) about the desk and the window. The goal for you is to get a sense of the existence
+        of them and where they are to each other.
+    </p>
+    <p>
+        Pause for a while to imagine this scene. When you feel confidence in your illustration, please click
+        <q>Next</q> to proceed.
+    </p>
+</div>
+
+<button id="next-button"> Next </button>
+
+<script>
+    var index = 0
+    data['timeStamps']['practiceBuildPalaceStartTime'] = new Date().getTime();
+    d3.select("#next-button")
+        .on("click", function () {
+            if (index == 0) {
+                d3.select("#firstboard")
+                    .style("display", "none")
+
+                d3.select("#secondboard")
+                    .style("display", "block")
+            } else {
+                data['timeStamps']['practiceBuildPalaceEndTime'] = new Date().getTime();
+                nextPage()
+            }
+            index++
+        })
+</script>

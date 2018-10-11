@@ -1,0 +1,19 @@
+<h1>Part <span id ="partx">0</span> - Practice Session</h1>
+
+<div id="firstboard" class="board">
+    <p> 
+        Next you will practice the read-recall-recognization task with only one passage. In the main session, you will read a series of passages and recall them.
+    </p>
+    <p>
+        We blur the reading materials on purposes. Please move your mouse onto the passage in order to read it. Try the technique here: <span class = "blurtext">(test)</span>.
+    </p>
+</div>
+<div class="board" id = "secondboard" style="display:none;"></div>
+
+<button id = "next-button"> Next </button>
+<script>
+    blurText()
+    setTimeout(function(){
+        setupReading("trainingReading", practiceData.practice_abstract)},
+        experimentSettings.loadingTime)
+</script>

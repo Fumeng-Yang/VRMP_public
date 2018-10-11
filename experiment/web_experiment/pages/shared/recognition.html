@@ -1,0 +1,55 @@
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<div id="firstboard">
+    <h1> Part
+        <span id="partx">0</span> - Recognition </h1>
+    <p>
+        Take a short break if you need.
+    </p>
+    <p>
+        Next, we will give you
+        <font id="recognition_num">16</font> sentences. For each sentence, please indicate if you read it
+        <span id="whenisthis">just now</span> and how much confidence you have in your answer.
+    </p>
+
+    <p>
+        If you are ready, please proceed to the recognition task page.
+    </p>
+</div>
+
+<div id="secondboard" style="display:none;">
+    Please indicate whether you read the sentences
+    <span id="whenisthis">just now</span> and your confidence about your answers. The least confidence means you are almost guessing. The most
+    confidence means you are sure about the answer.
+    <br>
+    <br>
+
+    <table id="sentenceboard" style="width:100%;">
+        <tr style="border:solid 1px lightgrey;">
+            <td></td>
+            <td colspan="2" class="cell_yes cell_1" align="center">Read yet?</td>
+            <td class="cell_confidence cell_1" align="center">Confidence</td>
+        </tr>
+        <tr align="center">
+            <td class="cell_0"></td>
+            <td class="cell_yes cell_0">Yes</td>
+            <td class="cell_no cell_0">No</td>
+            <td class="cell_confidence cell_0">
+                <pre style="display:inline;">  0%                   100%</pre>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <p id="warning" style="color:red;">
+        <br>
+    </p>
+</div>
+
+<button id="next-button">Next</button>
+
+<!-- <script src = "js/recognition.js"></script> -->
+<script>
+    setTimeout(function () {
+        setupRecognition("recognition", settings["sentences_" + settings.day])
+    }, experimentSettings.loadingTime)
+</script>

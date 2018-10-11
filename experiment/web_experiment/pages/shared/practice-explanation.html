@@ -1,0 +1,129 @@
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <h1> Part <span id = "partx">0</span> - Practice Session </h1>
+    <p>
+        Thanks you for all your answers. Please review the feedback of your answers. When you finish, click <q>Next</q> to proceed.
+    </p>
+    <div id="original_abs">
+        The original passage we gave is:
+    </div>
+
+    <div id="practice_recall">
+        The recall you turn in is:
+    </div>
+
+    <div id="recognition_explanation">
+         In the recognition session, the sentences we provided are:
+    </div>
+    
+    <button id = "next-button">Next</button>
+    
+    <script>
+       
+       data['timeStamps']['practiceExplanationStartTime'] = new Date().getTime()
+
+        d3.select("#next-button")
+        .on("click", function(){
+            data['timeStamps']['practiceExplanationEndTime'] = new Date().getTime()
+            nextPage()
+        })
+
+       var divHeight = "400px"
+       var originDiv = d3.select("#original_abs")
+        .selectAll(".abstracBox")
+        .data(practiceData.practice_abstract)
+        .enter()
+        .append("div")
+        .attr("class", "abstracBox")
+        .style("margin-bottom", "25px")
+        .style("height", divHeight)
+        .style("border-radius", "10px")
+        .style("border-style", "solid")
+        .style("border-width", "1px")
+        
+        originDiv.append("p")
+        .style("margin", "5px")
+        .html(function(d){
+           return "<b>Title</b>: " + d.title
+        })
+        
+        originDiv.append("p")
+        .style("margin", "5px")
+        .html(function(d){
+          return "<b>Body</b>: " + d.abstract.join(" ")
+        })
+
+        var recallDiv = d3.select("#example_recall")
+        .selectAll(".answerBox")
+        .data(practiceData.practice_answer)
+        .enter()
+        .append("div")
+        .attr("class", "answerBox")
+        .style("margin-bottom", "20px")
+        .style("height", divHeight)
+        .style("border-radius", "10px")
+        .style("border-style", "solid")
+        .style("border-width", "1px")
+        
+        recallDiv.append("p")
+        .style("margin", "5px")
+        .html(function(d){
+           return "<b>Title</b>: " + d.title
+        })
+
+        recallDiv.append("p")
+        .style("margin", "5px")
+        .html(function(d){
+          return "<b>Body</b>: " + d.abstract.join(" ")
+        })
+
+        var recallDiv = d3.select("#practice_recall")
+        .selectAll(".recallBox")
+        .data(data.practiceRecall.recallEntries)
+        .enter()
+        .append("div")
+        .style("margin-bottom", "20px")
+        .style("height", divHeight)
+        .style("border-radius", "10px")
+        .style("border-style", "solid")
+        .style("border-width", "1px")
+        
+        recallDiv.append("p")
+        .style("margin", "5px")
+        .html(function(d){
+           return "<b>Title</b>: " + d.title
+        })
+
+        recallDiv.append("p")
+        .style("margin", "5px")
+        .html(function(d){
+          return "<b>Body</b>: " + d.abstract
+        })
+
+        var recogDiv = d3.select("#recognition_explanation")
+        .selectAll(".explanationBox")
+        .data(practiceData.sentences)
+        .enter()
+        .append("div")
+        .attr("class", "explanationBox")
+        
+
+        recogDiv.append("div")
+        .style("height", "60px")
+        .style("border-radius", "5px")
+        .style("border-style", "solid")
+        .style("border-width", "1px")
+        .style("margin-bottom", "-10px")
+        .style("margin-top", "10px")
+        .append("p")
+        .style("margin", "5px")
+        .html(function(d){
+            return d.sentence
+        })
+
+        recogDiv.append("p")
+        .style("font-style", "italic")
+        .html(function(d, i){
+            return "<b>Explanation</b>: " + d.explanation + " Your answer is <b>" + data.practiceRecognition.recognitionAnswer[i].answer + ".</b>"
+        })
+
+    </script>

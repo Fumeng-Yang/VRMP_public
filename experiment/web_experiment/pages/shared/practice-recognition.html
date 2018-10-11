@@ -1,0 +1,46 @@
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<div id="firstboard">
+    <h1> Part
+        <span id="partx">0</span> - Practice Session </h1>
+    <p>
+        Take a break if you need. Next, we will give you a few sentences. For each sentence, please indicate if you read it just
+        now and how much confidence you have about your answers.
+    </p>
+</div>
+
+<div id="secondboard" style="display:none;">
+    Please indicate whether you read the sentences
+    <span id="whenisthis">just now</span> and your confidence. The least confidence (0 %) means you are almost guessing. The most confidence (100
+    %) means you are sure about the answer.
+    <br>
+    <br>
+
+    <table id="sentenceboard" style="width:100%;">
+        <tr style="border:solid 1px lightgrey;">
+            <td></td>
+            <td colspan="2" class="cell_yes cell_1" align="center">Read yet?</td>
+            <td class="cell_confidence cell_1" align="center">Confidence</td>
+        </tr>
+        <tr align="center">
+            <td class="cell_0"></td>
+            <td class="cell_yes cell_0">Yes</td>
+            <td class="cell_no cell_0">No</td>
+            <td class="cell_confidence cell_0">
+            <pre style="display:inline;">  0%                   100%</pre>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <p id="warning" style="color:red;">
+        <br>
+    </p>
+</div>
+
+<button id="next-button">Next</button>
+
+<script>
+    setTimeout(function () {
+        setupRecognition("practiceRecognition", practiceData.sentences)
+    }, experimentSettings.loadingTime)
+</script>

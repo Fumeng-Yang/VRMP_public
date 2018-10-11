@@ -1,0 +1,21 @@
+<div id = "firstboard">
+<h1> Part <span id="partx">6</span> -  The End</h1>
+<p>
+    <strong>Remember to come back if you still have sessions to finish</strong>. 
+   Just come home as usual and come back here in a few days.  Thank you so much!
+</p>
+
+</div>
+
+<button id = "next-button">Submit!</button>
+
+<script>
+    data['timeStamps']['day1EndTime'] = new Date().getTime()
+    data['timeStamps']['day1DurationTime'] = data['timeStamps']['day1EndTime'] - data['timeStamps']['day1StartTime']
+    
+    d3.select("#next-button")
+    .on("click", function(){
+        downloadData()
+        alert("Thank you!")
+    })
+</script>

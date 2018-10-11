@@ -1,0 +1,46 @@
+<div id="firstboard" class="board">
+    <h1>Part
+        <span id="partx">0</span> - Practice Session</h1>
+    <p>
+        The desk and the table will be used as your palace to build the connection (the imaginary visualization).
+    </p>
+    The tasks for you are:
+    <p>
+        <b>1) carefully read the passage on the next page. </b>We blur the reading material on purposes. You need to move the
+        mouse onto the passage in order to read it. Try the technique here:
+        <span class="blurtext">(test)</span>.
+    </p>
+
+    <p>
+        <u>How to read the passages</u>:
+        <br> Read the passage at your own pace and make sure each sentence makes sense to you. You will be asked to recall as
+        much of the passage as you could remember afterwards. But please do not attempt to memorize the passage word by
+        word.
+    </p>
+    <p>
+        <b>2) build a connection between the passage and the desk using your imagination and the
+            <q>memory palace</q> method</b>.
+        <br>
+    </p>
+    <u>How to build a connection: </u>
+    <br> Try to visualize what you read as objects, stories, images, and animations. The visualization should be as incredible
+    and appealing as possible. It should provide you enough hints to help you recall the content of the passage later. Repeat
+    the imagination multiple times and confirm yourself you are not going to change the visualization.
+    </p>
+    <p>
+        The expectated time for this session is about 10 min. When you are ready, please click
+        <q>Next</q> to proceed.
+    </p>
+</div>
+<div class="board" id="secondboard" style="display:none;">
+    Read and remember the following passage using the memory palace method.
+</div>
+
+<button id="next-button"> Next </button>
+<script>
+    blurText()
+    data.trainingStory = ["Target: <b>the desk</b> "]
+    setTimeout(function () {
+        setupReading("practiceReading", practiceData.practice_abstract, "trainingStory")
+    }, experimentSettings.loadingTime)
+</script>

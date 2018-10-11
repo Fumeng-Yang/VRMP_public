@@ -1,0 +1,38 @@
+<div id = "firstboard">
+<h1> Part <span id ="partx">0</span> - Recall </h1>
+<p>
+ Take a short break if you need.
+</p>
+<p>
+Now,  we ask you to recall and write down what you can remember for what you just read <b>as completely as possible</b>. 
+The tasks are:
+<p>
+<b>1) write your recall of each passage separately, including both the titles and bodies;</b> <br>
+<b>2) sort them in the original order you read by dragging the entries.</b>
+</p>
+
+<p>
+<u>To repeat the recalling guidelines</u>: <br>
+It is not necessary to reproduce the original wording. 
+In other words, you don’t have to worry about exact wording, but do use the original wording for terminology.
+We want to see what and how much you can remember when you read the passages once for careful understanding. 
+We don't check spelling and grammar, as long as we can recognize what you mean.
+</p>
+<p>
+If you are ready, please proceed to the next page to write down your recall. You have up to <b>30 min</b> on next page.
+</p>
+</div>
+<div id = "secondboard" style="display:none;">
+    Write down what you can remember in each of the entries. Drag the entries to reorder them.  You still have <span id="timer">30</span> min.
+   <ul id = "sortable">
+   </ul>
+</div>
+
+<button id = "next-button">Next</button>
+
+<script> 
+    setTimeout(function(){
+        setupRecall("day1Recall", settings.target_abstracts)
+    }, experimentSettings.loadingTime)
+</script>
+

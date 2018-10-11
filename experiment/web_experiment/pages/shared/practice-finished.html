@@ -1,0 +1,43 @@
+<h1>Part <span id ="partx">0</span> - Practice Session</h1>
+<div>
+   <p>
+      The practice session is over. Take a break. <b>The mandatory break will end in <span id="timerbreak"></span>. You can break up to 10 min if you want.</b> 
+   </p>
+   <p>  
+      After your break, it is the main session. Instead of one passage, you will read a series of passages. After you finish reading them, you will be asked to recall.
+   </p>
+   <p>
+      If you have any question, please ask the experimenter(s) now. The experimenter(s) is not supposed to interrupt you in the main session.
+      When you come back from your break, please click <q>Next</q> to proceed to the main session.
+   </p>
+</div>
+<button id = "next-button">Next</button>
+<script>
+   data['timeStamps']['practiceSessionEndStartTime'] = new Date().getTime()
+   d3.select("#next-button")
+   .attr("disabled", "true")
+   .on("click", function(){
+        data['timeStamps']['practiceSessionEndEndTime'] = new Date().getTime()
+       nextPage()
+   })
+
+  var timer = 3 * 60
+  var setd =  setTimeout(function(){
+    d3.select("#next-button")
+    .attr("disabled", null)
+   }, globalDebugging ? 0 : timer * 1000) 
+  timeouts.push(setd)
+
+  var trigger =  setInterval(function(){
+    d3.select("#timerbreak")
+    .text(function(){
+        var min = Math.floor(timer / 60)
+        min = min >= 0 ? min : 0
+        var sec = timer % 60
+        sec = sec >= 0 ? sec : 0
+        timer--
+        return min + " min " + sec + " sec "
+    })
+   }, 1000)
+   timeintervals.push(trigger)
+</script>

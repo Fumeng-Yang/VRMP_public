@@ -1,0 +1,37 @@
+<div id="firstboard">
+    <h1> Part
+        <span id="partx">0</span> - Practice Session </h1>
+    <p>
+        Now, we ask you to recall and write down the passage you just read
+        <b>as completely as possible</b>.
+    </p>
+    <p>
+        <b>Please recall by imagining you see the desk and the window again and try to pick up the connection (visualization)
+            between the desk and the passage</b>. What is it about? What are details in the visualization that reflect the
+        passage you read?
+    </p>
+    <p>
+        <u>To repeat the recalling guidelines</u>:<br> 
+        It is NOT necessary to reproduce the original wording. In other words, you don’t have to worry about exact wording.
+        We want to see what and how much you can remember after you read the passage once for careful understanding. At the
+        end, please rate how vivid it is for your illustration.
+    </p>
+    <p>
+        If you are ready, please click
+        <q>Next</q> to proceed to the recall page.
+    </p>
+</div>
+
+<div id="secondboard" style="display:none;">
+    Write down what you can remember in the entry.
+    <ul id="sortable">
+    </ul>
+</div>
+
+<button id="next-button">Next</button>
+<!-- <script src="js/recall.js"></script> -->
+<script>
+    setTimeout(function () {
+        setupRecall("practiceRecall", practiceData.practice_abstract)
+    }, experimentSettings.loadingTime)
+</script>

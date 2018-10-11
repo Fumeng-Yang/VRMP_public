@@ -1,0 +1,34 @@
+<h1>Experiment Overview</h1>
+<div id="day1instruction">
+    <p>
+        There are three main tasks in this experiment:
+    </p>
+    <p>
+        <b>1) Learn a memory method called
+            <q>Memory Palace</q> (also called
+            <i>Method of loci</i>).</b>
+        <br>
+        <b> 2) We will give you a set of locations, and you will use them as your
+            <q>palace</q> to read and remember a series of passages from scientific publications.</b>
+        <br>
+        <b> 3) Recall the passages as complete as you can.</b>
+    </p>
+    <p>
+        The following sessions are: explanation of our expectation - training - practice - main session.
+    </p>
+    <p>
+        There might be latin names in the passages. You can straightly ignore them.
+        <br> Remember to turn off or stay away from your cell phone(s) and other electronic devices that can interrupt you.
+    </p>
+</div>
+<div>
+    <button id="next-button"> Next </button>
+</div>
+<script>
+    data['timeStamps']['day1ExperimentalInstructionStartTime'] = data['timeStamps']['day1StartTime'] = new Date().getTime();
+    d3.select("#next-button")
+        .on("click", function () {
+            data['timeStamps']['day1ExperimentalInstructionEndTime'] = new Date().getTime();
+            nextPage();
+        })
+</script>

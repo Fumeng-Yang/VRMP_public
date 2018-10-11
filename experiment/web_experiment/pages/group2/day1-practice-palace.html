@@ -1,0 +1,84 @@
+<h1>Part
+    <span id="partx">0</span> - Practice Session</h1>
+
+<div id="firstboard" class="board">
+    <p>
+        Thanks, you passed! Next, you will take a practice. You will use VR and the memory palace method with one passage. You will
+        read the passage and associate it to a target location in virtual reality, come back to write down your recall, and
+        finish a small recognition task.
+    </p>
+    <p>
+        When you are ready, click
+        <q>Next</q> to see the detailed instructions.
+    </p>
+</div>
+<div class="board" id="secondboard" style="display:none;">
+    Basically, you ask the experimenter(s) to proceed for each of these tasks:
+    <p>
+        <b>1) Play with VR. There will be a simple VR scene with a desk in a room.</b> The experimenter will introduce VR and
+        what you can do in this scene.
+    </p>
+    <p>
+        <b>2) Ask the experiment to show you the passage, and read it carefully in virtual reality. </b>
+        <br>
+        <u>How to read the passages</u>:
+        <br> Read the abstract at your own pace and make sure each sentence makes sense to you. You will be asked to recall as
+        much of the passages as you could remember afterwards. But please do not attempt to memorize the passages word by
+        word.
+    </p>
+
+    <p>
+        <b>3) Build a connection between the desk (the target location) and the passage using imagination. </b>
+        <br>
+        <u>How to build a connection: </u>
+        <br> Try to visualize what you read as objects, stories, images, and animations. The visualization should be as incredible
+        and appealing as possible. It should provide you enough hints to help you recall the content of the passage later.
+        We will ask you to write down what you can remember about the passage later. Repeat the imagination multiple times
+        and confirm yourself you are not going to change the visualization.
+    </p>
+    <p>
+        <br> These instructions will be presented in VR. You can ask any question in this session. Ask the experimenter(s) to
+        help you put on / take off the devices.
+    </p>
+    <p>
+        The experimenter(s) watches your movements while you are in VR to ensure you won't hurt in the reality. But if you feel serious
+        motion sickness, please stop immediately, close your eyes, and notify the experimenter(s) to help you out.
+    </p>
+    <p>
+        The expectated time for this session is about 10 min. Please don't click
+        <q>Next</q> until you come back.
+    </p>
+</div>
+
+<button id="next-button"> Next </button>
+
+<script>
+    var index = 0
+    data['timeStamps']['practiceStartTime'] = new Date().getTime()
+    // if button hits, then dislay the picture 
+    // d3.select("#next-button")
+    // .attr("disabled", null)
+    d3.select("#secondboard")
+        .style("display", "none")
+
+    d3.select("#next-button")
+        .on("click", function () {
+            if (index == 0) {
+                index++
+                d3.select("#firstboard")
+                    .style("display", "none")
+
+                d3.select("#secondboard")
+                    .style("display", "block")
+                index++;
+
+            } else {
+                data['timeStamps']['practiceEndTime'] = new Date().getTime()
+                data['timeStamps']['practiceTime'] = data['timeStamps']['practiceEndTime'] - data['timeStamps'][
+                    'practiceStartTime'
+                ]
+                nextPage()
+            }
+
+        })
+</script>

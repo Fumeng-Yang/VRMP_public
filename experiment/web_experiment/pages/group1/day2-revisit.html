@@ -1,0 +1,47 @@
+<h1> Part 1 - Revisit Your Palace</h1>
+<img src="../files/coffee_revisit.png" width="850px" alt="A generic coffee shop" align="middle">
+<div id="firstboard">
+    <p>
+        Remember the mental coffee shop you created yesterday. You imagined a route in your imaginary coffee shop. Now, we ask you
+        to imagine that you walk along the route again and see all the locations. After this, we will ask you to write down your recall for the passages.
+    </p>
+    <p>
+        The tasks for this session is just to revisit and recall:
+        <br>
+        <b>1) Recall the coffee shop and the series of locations we asked you to remember. </b>
+        <br />
+        <br />
+        <b>2) Imagine yourself walking through these locations one by one in the same order you did it yesterday. </b>Repeat the
+            process multiple times until you are comfortable with the route;
+        <br />
+        <br />
+        <b>3) For each location, recall what visualization that connects it to the corresponding passage.</b>
+        <br />
+    </p>
+
+    <p>
+        Practice this mental journey multiple times until you feel comfortable with whatever you can recall or you have nothing to
+        add. You may not remember everything. Try your best!
+    </p>
+    <p>
+        When you are finished, please click
+        <q>Next</q> to proceed to write down your recalls.
+    </p>
+</div>
+
+</div>
+
+<button id="next-button">Next</button>
+<script>
+    var index = 0
+    var revisitStartTime = new Date().getTime()
+
+    d3.select("#next-button")
+        .on("click", function () {
+            var revisitEndTime = new Date().getTime()
+            data['timeStamps']['revisitTime'] = revisitEndTime - revisitStartTime
+            data['timeStamps']['revisitEndTime'] = revisitEndTime
+            data['timeStamps']['revisitStartTime'] = revisitStartTime
+            nextPage()
+        })
+</script>

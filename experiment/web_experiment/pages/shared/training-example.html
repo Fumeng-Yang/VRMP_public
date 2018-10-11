@@ -1,0 +1,117 @@
+<h1>Part
+  <span id="partx">0</span> - Our Expectation</h1>
+<div id="firstboard" class="board">
+  <div>
+    <p>
+      <u>General reading guidelines:</u>
+      <br>
+      <b>Read all the passages carefully in preparation for a memory test. Make sure every sentence makes sense to you, focus
+        on remembering gists, and take a look at details. Please DO NOT memorize the passage word by word. DO NOT take any
+        notes or use any means of marking. </b>
+    </p>
+  </div>
+  <p>
+    Here is an example of what you will read.
+  </p>
+  <div id="example_abstract">
+  </div>
+  <p>
+    Please click
+    <q>Next</q> to see what we expect after the reading.
+  </p>
+</div>
+<div class="board" id="secondboard" style="display:none;">
+  <div>
+    <p>
+      Then you will be asked to recall.
+      <br>
+      <u>General recalling guidelines:</u>
+      <br>
+      <b>Write down as much as possible in sentences. It is NOT necessary to reproduce the original wording. You can use your
+        own words in English, but try to use the original terminology (e.g., chimpanzee &#8800; baboon). We don't check grammar
+        or spelling, as long as we can recognize what you mean. Again, you can ignore latin names.
+      </b>
+    </p>
+    <p>
+      The below is an example of recall, and we encourage you to do better than this example.
+    </p>
+  </div>
+  <div id="example_answer">
+  </div>
+  <p>
+    Please click
+    <q>Next</q> to proceed to the next session.
+  </p>
+</div>
+<button id="next-button"> Next </button>
+<script>
+  var divHeight = "390px"
+  var exampleAbs = d3.select("#example_abstract")
+    .selectAll(".abstracBox")
+    .data(practiceData.example_abstract)
+    .enter()
+    .append("div")
+    .attr("class", "abstracBox")
+    .style("margin-top", "7px")
+    .style("margin-bottom", "27px")
+    .style("height", divHeight)
+    .style("border-radius", "10px")
+    .style("border-style", "solid")
+    .style("border-width", "1px")
+
+  exampleAbs.append("p")
+    .style("margin", "7px")
+    .html(function (d) {
+      return "<b>Title</b>: " + d.title
+    })
+
+  exampleAbs.append("p")
+    .style("margin", "7px")
+    .html(function (d) {
+      return "<b>Abstract</b>: " + d.abstract.join(" ")
+    })
+
+  var exampleAns = d3.select("#example_answer")
+    .selectAll(".abstracBox")
+    .data(practiceData.example_answer)
+    .enter()
+    .append("div")
+    .attr("class", "abstracBox")
+    .style("margin-bottom", "27px")
+    .style("height", divHeight)
+    .style("border-radius", "10px")
+    .style("border-style", "solid")
+    .style("border-width", "1px")
+
+  exampleAns.append("p")
+    .style("margin", "7px")
+    .html(function (d) {
+      return "<b>Title</b>: " + d.title
+    })
+
+  exampleAns.append("p")
+    .style("margin", "7px")
+    .html(function (d) {
+      return "<b>Abstract</b>: " + d.abstract.join(" ")
+    })
+
+  data['timeStamps']['trainingExampleStartTime'] = new Date().getTime()
+
+  var index = 0
+
+  d3.select("#next-button")
+    .on("click", function () {
+      if (index === 0) {
+        d3.select("#firstboard")
+          .style("display", "none")
+
+        d3.select("#secondboard")
+          .style("display", "block")
+
+        index++
+      } else {
+        data['timeStamps']['trainingExampleEndTime'] = new Date().getTime()
+        nextPage()
+      }
+    })
+</script>

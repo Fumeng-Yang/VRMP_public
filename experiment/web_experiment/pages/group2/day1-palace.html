@@ -1,0 +1,122 @@
+<h1>Part
+    <span id="partx">0</span> – Create a Palace & Memory Palace </h1>
+<div id="firstboard">
+    <p>
+        In the main session, <b>you will create a palace based on
+        <font class="scene">a generic coffee shop</font> in virtual reality.  You are going to read and remember 
+        a series of passages in virtual reality using the memory palace method.  We will provide you a set of locations to imitate the process of order a cup of coffee. Each of the passages is put at a certain location. You should
+        visualize what you are reading and try to link it into that location</b>.
+    </p>
+    <p>
+        If you wanna skim the memory palace method article again, click
+        <a href="../files/Building_Your_Memory_Palaces.pdf" target="_blank">(here)</a> to read it.
+    </p>
+    <p>
+
+        When you are ready, click
+        <q>Next</q> to see the detailed instructions.
+    </p>
+</div>
+
+<div id="secondboard">
+    <p>
+        <br> Basically, you ask the experimenter(s) to proceed for each of these tasks:
+        <br>
+        <br>
+        <b>1) Walk around and get familiar with the scene, then ask the experimenter(s) to show the locations on the route.
+        </b>
+        <br>Practice the virtual route multiple times as if you are order a cup of coffee; repeat until you feel confidence in remembering all the locations and the
+        order.
+        <br>
+        <br>
+        <b>2) When ready, ask the experimenter(s) to lead you to the reading session.</b> You start to read the passages carefully.
+        <br>
+            <u>To repeat the reading guidelines</u>: <br>Read the passages at your own pace and make sure each sentence makes
+            sense to you. Try to remember the gists. You will be asked to recall as much of the passages as you could afterwards. But please
+            do not attempt to memorize the passages word by word.
+        <br>
+        <br>
+        <b>3) Build connections between the passages and the locations using your imagination.</b>
+   
+        <br>
+        <u>To repeat how to build a connection</u>: <br>Let your imagination run freely. Try to visualize what you read as objects,
+        stories, and images, and try to imagine those are linked to the locations in some way. The visualization should be
+        as incredible and appealing as possible. It should provide you enough hints to help you recall the title and the
+        content of the passage later. Go through the process of imagining the journey multiple times until you are confident
+        with what you have created in your mind.
+    </p>
+    <p>
+        Keep in mind that you have up to
+        <b>30 min</b> once you start reading. Ask the experimenter to help you put on / take off the VR devices.
+    </p>
+    <p>
+        The instructions will be given under the VR as well. Please don't click
+        <q>Next</q> until you come back.
+    </p>
+    <span>
+        <button id="journey-end">Journey End</button>
+        <font id="journey-end-text"></font>
+    </span>
+    <br>
+    <span>
+        <button id="reading-end">Reading End</button>
+        <font id="reading-end-text"></font>
+    </span>
+    <br>
+</div>
+<button id="next-button">Next</button>
+
+<script>
+    (function () {
+        var index = 0
+        var buildingTime, readingTime
+        var palaceStartTime = new Date()
+            .getTime()
+        d3.select("#secondboard")
+            .style("display", "none")
+        d3.select("#third")
+            .style("display", "none")
+        d3.select("#next-button")
+            .on("click", function () {
+                if (index == 0) {
+                    d3.select("#firstboard")
+                        .style("display", "none")
+
+                    d3.select("#secondboard")
+                        .style("display", "block")
+                    index++;
+                } else {
+                    if (buildingTime && readingTime) {
+                        data['timeStamps']['buildingTime'] = buildingTime - readingTime
+                        data['timeStamps']['readingTime'] = readingTime - buildingTime
+                        var palaceEndTime = new Date().getTime()
+                        data['timeStamps']['palaceTime'] = palaceEndTime - palaceStartTime
+                        data['timeStamps']['palaceEndTime'] = palaceEndTime
+                        data['timeStamps']['palaceStartTime'] = palaceStartTime
+                        nextPage();
+                    }
+                }
+            })
+        d3.selectAll("span")
+            .style("line-height", "25pt")
+
+        d3.select("#journey-end")
+            .on("click", function () {
+                buildingTime = new Date()
+                    .getTime()
+                d3.select(this)
+                    .style("disabled", true)
+                d3.select("#journey-end-text")
+                    .text(" " + new Date(buildingTime))
+            })
+        d3.select("#reading-end")
+            .on("click", function () {
+                readingTime = new Date()
+                    .getTime()
+                d3.select(this)
+                    .style("disabled", true)
+                d3.select("#reading-end-text")
+                    .text(" " + new Date(readingTime))
+            })
+    }())
+</script>

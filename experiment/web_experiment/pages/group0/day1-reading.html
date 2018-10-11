@@ -1,0 +1,36 @@
+<div id="firstboard">
+    <h1> Part
+        <span id="partx">0</span> – Read the Passages </h1>
+    <p>
+        <b>Next, you will read a series of passages</b> and
+        <b>recall after you finish reading. Keep in mind that you need to put your recall in the original order you read.</b>
+    </p>
+    <p>
+        <u>To repeat the reading guidelines </u>: <br>Read the passages at your own pace and make sure each sentence makes sense to
+        you. Try to remember the gists. You will be asked to recall as much of the passages as you could later. But please do not attempt to memorize
+        the passages word by word.
+    </p>
+    <p>
+        As before, we blur the reading materials on purposes. You have to move the mouse onto a passage in order to read it. Try
+        the technique here:
+        <span class="blurtext">(test)</span>.
+    </p>
+    <p>
+        When you are ready, please click the
+        <q>Next</q> button to proceed. You have up to
+        <b>30 min</b> to read on next page.
+    </p>
+</div>
+
+<div id="secondboard" style="display:none;">
+    <p>You still have
+        <span id="timer">30</span> min.</p>
+</div>
+<button id="next-button">Next</button>
+
+<script>
+    setTimeout(function () {
+        blurText()
+        setupReading("day1Reading", settings.target_abstracts)
+    }, experimentSettings.loadingTime)
+</script>

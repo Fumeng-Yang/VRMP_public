@@ -1,0 +1,47 @@
+<div id="firstboard">
+    <h1> Part 1 - Revisit Your Palace</h1>
+    <p>
+        Remember the coffee shop in virtual reality you visited yesterday. Now, we ask you to revisit
+        <span class="scene">the coffee shop</span> and redraw the connections (imaginary visualizations) you built between what you read and
+        what you seen. After this, we will ask you to write down your recall for the passages.
+    </p>
+    <p>
+        Ask the experimenter to help you put on virtual reality devices. The tasks for this session is just to revisit and recall:
+        <br>
+        <br />
+        <b>1) Walk around and get familiar with the scene and the series of locations (the route) again. </b>
+        <br />
+        <br />
+        <b>2) Walking through the locations one by one in the same order you did it yesterday. Repeat the process multiple times
+            until you are comfortable with the route;</b>
+        <br />
+        <br />
+        <b>3) For each location, recall what the visaulization you created yesterday in order to
+            <q>connect</q> the location to the passage;</b>
+        <br>
+    </p>
+    <p>
+        Practice this journey multiple times until you feel comfortable with whatever you can recall or you have nothing to
+        add. You may not remember everything. Try your best! When you are done, ask the experimenter(s) to help you take
+        off the VR device. 
+    </p>
+    <p>
+        Do not click
+        <q>Next</q> until you come back.
+    </p>
+
+</div>
+
+<button id="next-button">Next</button>
+<script>
+    var revisitStartTime = new Date().getTime()
+    d3.select("#next-button")
+        .on("click", function () {
+            var revisitEndTime = new Date().getTime()
+            data['timeStamps']['revisit'] = {}
+            data['timeStamps']['revisit']['revisitTime'] = revisitEndTime - revisitStartTime
+            data['timeStamps']['revisit']['revisitEndTime'] = revisitEndTime
+            data['timeStamps']['revisit']['revisitStartTime'] = revisitStartTime
+            nextPage()
+        })
+</script>

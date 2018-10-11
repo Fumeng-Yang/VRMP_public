@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+
+* {
+  color: #444444;
+  font-family: "PT Sans", sans-serif;  
+  font-size:13pt;
+}
+
+body {
+  margin: 2em auto 1em auto;
+  width: 920px;
+}
+
+h1{
+  font-size:26pt;
+}
+
+h3{
+  font-size:16pt;
+  font-weight: bold;
+  margin-bottom: -10pt;
+}
+.h1{
+  font-size:26pt;
+}
+
+button{
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #BBBBBB; /* Green */;
+  background-color: #f8efde;
+}
+
+button:disabled {
+  background: #CCCCCC;
+}
+
+canvas{
+  border: 1px solid #BBBBBB; /* Green */;
+}
+
+button:hover {
+    background-color: lightsteelblue;
+}
+
+.topicInterest_cell{
+  width: 168px;
+  height: 13px;
+  font-size:13pt;
+}
+
+.cell_body{
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cell_1{
+  background-color:#dee4ed;
+}
+
+.cell_0{
+  background-color:white;
+}
+
+.cell_confidence{
+  width: 120px;
+}
+
+.smallfont{
+  font-size: 9pt;
+}
+
+
+.placeholder {
+  color: steelblue;
+  font-weight: bold;
+}
+
+.progressnum{
+  color: lightgray;
+  font-size: 9pt;
+}
+
+#progressreport{
+  margin-right:1em;
+  float: right;
+}
+
+#module{
+  margin: 1.1em auto 1em auto;
+  width: 900px;
+}
+
+#control {
+  margin-top: 1em;
+}
+
+#next-button {
+  float: right;
+  margin-bottom: 50px;
+}
+
+#next-button_ {
+  float: right;
+  margin-bottom: 50px;
+}
+
+#timer{
+  font-weight: bold;
+}
+

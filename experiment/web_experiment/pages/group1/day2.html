@@ -1,0 +1,24 @@
+<h1>Experiment Overview</h1> 
+<div id = "day2instruction">
+    <p>Thanks for coming back. </p>
+    <p> Yesterday, we asked you to read a series of passages carefully using a mnemonic called <q>Memory Palace</q>. 
+        <b>Today, we‘d like to test how much you can remember after 24 hours in the same way you did yesterday.</b>
+    </p>
+    <p>The following sessions are: revisit your palace - recall - recognition - survey questions</p>
+    <p>Remember to turn off or stay away from your cell phone(s) and other electronic devices that can interrupt you.
+       If you have any question, please ask the experimenter(s) before you proceed to the main study. 
+    </p>
+</div>
+<div>
+    <button id = "next-button"> Next </button>
+</div>
+<script>
+    var day2StartTime = new Date().getTime()
+    data['timeStamps']['day2ExperimentalInstructionStartTime'] = day2StartTime
+    data['timeStamps']['day2StartTime'] = day2StartTime
+    d3.select("#next-button")
+    .on("click", function(){
+        data['timeStamps']['day2ExperimentalInstructionEndTime'] = new Date().getTime()
+        nextPage()
+    })
+</script>

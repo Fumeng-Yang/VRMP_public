@@ -1,0 +1,91 @@
+<h1> Part <span id="partx">2</span> –  Create a Palace </h1>
+<div id="firstboard">
+        <p>
+                In the main session, <b>you will create a palace based on <font class="scene">a generic coffee shop</font>.
+                We will provide you a set of locations. You are going to read and remember a series of
+                passages using the memory palace method based on the locations.
+                <!-- You should <b>remember the location and associate it with the abstract using your wild imaginization</b>. -->
+                You should visualize what you read and try to link it into that location</b>. 
+            </p>
+    <p>
+        If you wanna skim the memory palace article again, click <a href="../files/Building_Your_Memory_Palaces.pdf"
+        target="_blank">(here)</a> to read it.
+    </p>
+    <p>
+    When you are ready, click <q>Next</q> to see the detailed instructions.
+    </p>
+</div>
+
+<div id="secondboard">
+    <div text-align="center">
+        <img src="../files/coffee_scene.png" width="890px" alt="A generic coffee shop">
+    </div>
+
+    <p>
+        We provide a set of locations in a generic coffee shop, which should be very similar to a regular coffee shop. In your mental
+        coffee shop, you are going to order a cup of coffee:
+    </p>
+
+    <ol id="storylist">
+    </ol>
+
+    <p>
+        Please imagine yourself walking through these locations in order. Follow you heart but make
+        sure you are <b>using these landmarks</b> and they are <b>in the same order</b> as above. 
+        Practice this mental journey multiple times until you feel confidence in remember all the various locations and the order.
+    </p>
+    <p>
+        When you are ready, please click <q>Next</q> to proceed to the next session.
+    </p>
+</div>
+
+<button id="next-button">Next</button>
+<script>
+    (function() {
+        var buildPalaceStartTime = new Date().getTime()
+        data['timeStamps']['buildPalaceStartTime'] = buildPalaceStartTime
+        var status = "init"
+
+        var index = 0
+
+        d3.select("#secondboard")
+            .style("display", "none")
+
+        d3.select("#storylist")
+            .selectAll("li")
+            .data(data.story)
+            .enter()
+            .append("li")
+            .html(function(s) {
+                return s
+            })
+
+        // setup next button
+        d3.select("#next-button")
+            .style("disabled", true)
+            .on("click", function() {
+                if (index == 0) {
+                    d3.select("#firstboard")
+                        .style("display", "none")
+
+                    d3.select("#secondboard")
+                        .style("display", "block")
+
+                    index++
+                } else {
+                    data['timeStamps']['buildPalaceEndTime'] = new Date().getTime()
+                    data['timeStamps']['buildMentalPalaceTime'] = data['timeStamps']['buildPalaceEndTime'] -
+                        buildPalaceStartTime
+                    nextPage()
+                }
+
+            })
+
+        // fronzen next button for a while
+        setTimeout(function() {
+            d3.select("#next-button")
+                .style("disabled", false)
+        }, experimentSettings.memoryPalaceWaitingTime)
+
+    }());
+</script>

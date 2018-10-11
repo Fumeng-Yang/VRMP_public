@@ -1,0 +1,559 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <title>Memory Study</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/d3.v4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/recognition.js"></script>
+    <script src="js/recall.js"></script>
+    <script src="js/read.js">
+    </script>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+   <![endif]-->
+</head>
+
+<body>
+
+    <a id="downloadAnchorElem" style="display:none"></a>
+    <datalist id="ticks">
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+        <option value="4"></option>
+        <option value="5"></option>
+        <option value="6"></option>
+        <option value="7"></option>
+    </datalist>
+    <div id="progressreport" class="progressnum" style="display:none;">progress:
+        <span id="currentprogress" class="progressnum"></span>/
+        <span id="allprogress" class="progressnum"></span>
+    </div>
+    <br>
+    <!--everything inside module will be replaced-->
+    <div id="module">
+        <h1>Welcome to our study!</h1>
+        <p>
+            You need to come here twice. We will pay you in cash after all the experiment sessions.
+        </p>
+        <p>
+            Things to know before the experiment:
+            <ol>
+                <li>This web-based system will guide you in the experiment. Everything you need to know and do is included the
+                    system.</li>
+                <li>The system will tell you when you need the experiment(s) to help you in some sessions.</li>
+                <li>If you have any questions or find the instructions are unclear, please ask the experimenter(s).</li>
+                <li>The environment can be noisy. Feel free to use earplugs.</li>
+                <li>We are recording the activities inside this room as a video.</li>
+            </ol>
+
+        </p>
+        <p>
+            <span>Your ID is:
+                <input name="id" maxlength="25" id="userid" value="G0P0"> and you are on
+                <select id="days">
+                    <option value="firstday" id="day1option"> Day 1</option>
+                    <option value="secondday" id="day2option">Day 2</option>
+                </select>
+            </span>
+        </p>
+
+        <p id="message1">
+            Please click
+            <q>Continue</q> to proceed.
+        </p>
+        <p id="message2"></p>
+        <br />
+        <br />
+        <button id="validate_button">Validate</button>
+        <button id="continue_button">Continue</button>
+    </div>
+</body>
+
+<script>
+    // (function() {
+    experimentSettings = {
+        "memoryPalaceWaitingTime": 50,
+        "memoryPalaceReadingArticleTime": 50,
+        "readingTime": 10,
+        "loadingTime": 50,
+        "defaultID": "vrcoffee",
+        "group0": {
+            "day1": {
+                "pages": [
+                    "index.html", // 0
+                    "group0/day1.html", // 0
+                    "shared/training-example.html", // 1
+                    "group0/day1-practice-reading.html", // 2
+                    "group0/day1-practice-recall.html", // 2
+                    "shared/practice-recognition.html", // 2
+                    "shared/practice-explanation.html", // 2
+                    "shared/practice-finished.html", // 2
+                    "shared/topic-interest.html", // 3
+                    "group0/day1-reading.html", // 4 normal reading 
+                    "group0/day1-recall.html", // 5 recall
+                    "shared/recognition.html", // 6
+                    "group0/day2-demographics.html", // 7
+                    "shared/thanks-day1.html" // 8
+                ],
+                "indice": [0, 0, 1, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8] // the index on the session title
+            },
+            "day2": {
+                "pages": [
+                    "index.html", //0
+                    "group0/day2.html", //0
+                    "group0/day2-recall.html", // 1 recall
+                    "shared/recognition.html", // 2
+
+                    "shared/thanks-day2.html" // 4
+                ],
+                "indice": [0, 0, 1, 2, 3, 4]
+            }
+        },
+        "group1": {
+            "day1": {
+                "pages": [
+                    "index.html", // 0 
+                    "group1/day1.html", // 0 
+                    "shared/training-example.html", // 1
+                    "shared/training-memory-palace.html", // 1
+                    "group1/day1-practice-buildpalace.html", // 2
+                    "group1/day1-practice-memorypalace.html", // 2
+                    "group1/day1-practice-recall.html", // 2
+                    "shared/practice-recognition.html", // 2
+                    "shared/practice-explanation.html", // 2
+                    "shared/practice-finished.html", // 2
+                    "shared/topic-interest.html", // 3
+                    "group1/day1-buildpalace.html", // 4 create a palace
+                    "group1/day1-memorypalace.html", // 5 reading
+                    "group1/day1-recall.html", // 6 recall
+                    "shared/recognition.html", // 7
+                    "group1/day2-demographics.html", // 4 demographics
+                    "shared/thanks-day1.html" // 8
+                ],
+                "indice": [0, 0, 1, 2, 3, 3, 3, 3, 3, 3, 4, 5, 6, 7, 8, 9, 10]
+            },
+            "day2": {
+                "pages": [
+                    "index.html", // 0
+                    "group1/day2.html", // 0
+                    "group1/day2-revisit.html", // 1 revisit
+                    "group1/day2-recall.html", // 2 recall
+                    "shared/recognition.html", // 3
+                    "shared/thanks-day2.html" // 5
+                ],
+                "indice": [0, 0, 1, 2, 3, 4, 5]
+            },
+        },
+        "group2": {
+            "day1": {
+                "pages": [
+                    "index.html", // 0
+                    "group2/day1.html", // 0
+                    "shared/training-example.html", // 1
+                    "shared/training-memory-palace.html", // 1
+                    "group2/day1-practice-palace.html", // 2
+                    "group2/day1-practice-recall.html", // 2
+                    "shared/practice-recognition.html", // 2
+                    "shared/practice-explanation.html", // 2
+                    "shared/practice-finished.html", // 2
+                    "shared/topic-interest.html", // 3
+                    "group2/day1-palace.html", // 4 normal reading 
+                    "group2/day1-recall.html", // 5 recall
+                    "shared/recognition.html", // 6
+                    "group2/day2-demographics.html", // 7
+                    "shared/thanks-day1.html" // 8
+                ],
+                "indice": [0, 0, 1, 2, 3, 3, 3, 3, 3, 4, 5, 6, 7, 8]
+            },
+            "day2": {
+                "pages": [
+                    "index.html", // 0
+                    "group2/day2.html", // 0
+                    "group2/day2-revisit.html", //1  recall
+                    "group2/day2-recall.html", //2  recall
+                    "shared/recognition.html", // 3
+                    "shared/thanks-day2.html" // 5
+                ],
+                "indice": [0, 0, 1, 2, 3, 4, 5]
+            }
+        },
+        "group3": {
+            "day1": {
+                "pages": [
+                    "index.html", // 0 
+                    "group3/day1.html", // 0 
+                    "shared/training-memory-palace.html", // 1
+                    "shared/training-example.html", // 1
+                    "group3/day1-practice-buildpalace.html", // 2
+                    "group3/day1-practice-memorypalace.html", // 2
+                    "group3/day1-practice-recall.html", // 2
+                    "shared/practice-recognition.html", // 2
+                    "shared/practice-explanation.html", // 2
+                    "shared/practice-finished.html", // 2
+                    "shared/topic-interest.html", // 3
+                    "group3/day1-buildpalace.html", // 4 create a palace
+                    "group3/day1-memorypalace.html", // 5 reading
+                    "group3/day1-recall.html", // 6 recall
+                    "shared/recognition.html", // 7
+                    "shared/thanks-day1.html" // 8
+                ],
+                "indice": [0, 0, 1, 1, 2, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7, 8]
+            },
+            "day2": {
+                "pages": [
+                    "index.html", // 0
+                    "group3/day2.html", // 0
+                    "group3/day2-revisit.html", // 1 revisit
+                    "group3/day2-recall.html", // 2 recall
+                    "shared/recognition.html", // 3
+                    "group3/day2-demographics.html", // 4 demographics
+                    "shared/thanks-day2.html" // 5
+                ],
+                "indice": [0, 0, 1, 2, 3, 4, 5]
+            },
+        },
+        "group4": {
+            "day1": {
+                "pages": [
+                    "index.html", // 0
+                    "group4/day1.html", // 0
+                    "shared/training-memory-palace.html", // 1
+                    "shared/training-example.html", // 1
+                    "group4/day1-practice-palace.html", // 2
+                    "group4/day1-practice-recall.html", // 2
+                    "shared/practice-recognition.html", // 2
+                    "shared/practice-explanation.html", // 2
+                    "shared/practice-finished.html", // 2
+                    "shared/topic-interest.html", // 3
+                    "group4/day1-palace.html", // 4 normal reading 
+                    "group4/day1-recall.html", // 5 recall
+                    "shared/recognition.html", // 6
+                    "shared/thanks-day1.html" // 7
+                ],
+                "indice": [0, 0, 1, 1, 2, 2, 2, 2, 2, 3, 4, 5, 6, 7]
+            },
+            "day2": {
+                "pages": [
+                    "index.html", // 0
+                    "group4/day2.html", // 0
+                    "group4/day2-revisit.html", //1  recall
+                    "group4/day2-recall.html", //2  recall
+                    "shared/recognition.html", // 3
+                    "group4/day2-demographics.html", // 4
+                    "shared/thanks-day2.html" // 5
+                ],
+                "indice": [0, 0, 1, 2, 3, 4, 5]
+            }
+        },
+        "index": 0 // page index
+    }
+
+    colors = [
+        "rgb(136,233,154)",
+        "rgb(130,209,244)",
+        "rgb(239,187,162)",
+        "rgb(188,205,151)",
+        "rgb(214,239,51)",
+        "rgb(250,209,57)",
+        "rgb(255,168,255)",
+        "rgb(198,192,254)",
+        "rgb(43,250,254)",
+        "rgb(97,242,45)"
+    ]
+
+    data = {} // experimental data, global variable
+
+    data.story = {} // will read from configuration files
+
+    data.timeStamps = {}
+
+    data.startTime = new Date().getTime()
+
+    data.interactionLogs = []
+
+    settings = {} // will read from configuration files
+
+    practiceData = {} // will read from configuration files
+
+    globalDebugging = false
+
+    timeouts = []
+    timeintervals = []
+
+    data.globalDebugging = globalDebugging
+
+    init()
+
+    function mouseInteraction() {
+        d3.select("body")
+            .on("click", function () {
+                var e = d3.event
+                var progress = experimentSettings.index > 0 ? experimentSettings[settings.groupid][settings.day][
+                    experimentSettings.index
+                ] : "index.html"
+                var parsedMouseEvent = {
+                    "timestamp": new Date(),
+                    "type": e.type,
+                    "screenX": e.screenX,
+                    "screenY": e.screenY,
+                    "pageX": e.pageX,
+                    "pageY": e.pageY,
+                    "x": e.x,
+                    "y": e.y,
+                    "path": e.path.map(function (d) {
+                        return d.localName + "#" + d.id + "." + d.className
+                    }),
+                    "progress": progress
+                }
+                data.interactionLogs.push(parsedMouseEvent)
+                if (globalDebugging) {
+                    console.log(e)
+                    console.log(parsedMouseEvent)
+                }
+            })
+            .on("mouseover", function () {
+                var coords = d3.mouse(this);
+                var e = d3.event
+                var progress = experimentSettings.index > 0 ? experimentSettings[settings.groupid][settings.day][
+                    experimentSettings.index
+                ] : "index.html"
+
+                var parsedMouseEvent = {
+                    "timestamp": new Date(),
+                    "type": e.type,
+                    "screenX": e.screenX,
+                    "screenY": e.screenY,
+                    "pageX": e.pageX,
+                    "pageY": e.pageY,
+                    "x": e.x,
+                    "y": e.y,
+                    "path": e.path.map(function (d) {
+                        return d.localName + "#" + d.id + "." + d.className
+                    }),
+                    "progress": progress
+                }
+                data.interactionLogs.push(parsedMouseEvent)
+                if (globalDebugging) {
+                    console.log(e)
+                    console.log(parsedMouseEvent)
+                }
+            })
+    }
+
+
+    function init() {
+        d3.select("#validate_button")
+            .on("click", function () {
+                validate();
+            })
+
+        d3.select("#userid")
+            .attr("value", experimentSettings.defaultID)
+
+        d3.select("#message1")
+            .style("display", "none")
+
+        d3.select("#message2")
+            .style("display", "none")
+
+        d3.select("#continue_button")
+            .style("display", "none")
+
+        mouseInteraction();
+
+    }
+
+    // validate if this id is valid and on the right day
+    function validate() {
+        var id = document.getElementById("userid").value
+        var day = d3.select("#days").node().value; // which day 
+        var path1 = "../../settingdata/" + id + "-settings.json"
+        var path2 = "../../userdata/web/" + id + "-day1.json"
+
+        d3.select("#continue_button")
+            .style("display", "none")
+
+        d3.select("#warning")
+            .text("")
+
+        if (id === "noinstruction" || id === "mentalcoffee" || id === "vrcoffee")
+            globalDebugging = true
+
+        if (day == "firstday") {
+            if (fileExists(path1)) {
+                console.log("first day")
+                console.log(path1)
+                d3.json(path1, function (settingData) {
+                    console.log(settingData)
+                    path2 += settingData.groupid + ".json"
+                    if (globalDebugging || !fileExists(path2)) {
+
+                        d3.select("#continue_button")
+                            .style("display", "inline")
+                            .on('click', function () {
+                                d3.json("../files/training_examples.json", function (tData) {
+                                    practiceData = tData
+                                    if (settingData.groupid == "group1" || settingData.groupid ==
+                                        "group2") {
+                                        d3.json("../files/story_coffee.json", function (story) {
+                                            data.story = story
+                                        })
+                                    } else if (settingData.groupid == "group3" || settingData.groupid ==
+                                        "group4") {
+                                        d3.json("../files/story_fantasy.json", function (story) {
+                                            data.story = story
+                                        })
+                                    }
+
+                                    nextPage()
+                                })
+                            })
+
+                        d3.select("#message1")
+                            .style("display", "inline")
+
+                        d3.select("#message2")
+                            .style("display", "none")
+
+                        d3.select("#groupidx")
+                            .style("display", "inline")
+                            .html(settingData.groupid)
+
+                        settings = settingData
+                        settings.day = "day1"
+                        data.settings = settings
+                        isValidate();
+                    } else {
+                        isNotValidate()
+                    }
+                })
+            } else {
+                isNotValidate()
+            }
+        } else {
+            // the second day
+
+            if (fileExists(path1)) {
+                console.log("second day")
+                d3.json(path1, function (settingData) {
+                    d3.select("#continue_button")
+                        .style("display", "inline")
+                        .on('click', function () {
+                            d3.json("../files/training_examples.json", function (tData) {
+                                practiceData = tData
+                                nextPage()
+                            })
+                        })
+
+                    d3.select("#continue_button")
+                        .style("display", "inline")
+
+                    d3.select("#message1")
+                        .style("display", "inline")
+
+                    d3.select("#message2")
+                        .style("display", "none")
+
+                    d3.select("#groupidx")
+                        .style("display", "inline")
+                        .text(settingData.groupid)
+
+                    settings = settingData
+                    settings.day = "day2"
+                    data.settings = settings
+                    isValidate();
+
+                })
+            } else {
+                isNotValidate()
+            }
+        }
+
+    }
+
+    function isValidate() {
+        data.userid = settings.userid
+        data.groupid = settings.groupid
+        data.day = settings.day
+
+    }
+
+    function isNotValidate() {
+        d3.select("#message2")
+            .text("Can't find the settings for this ID.")
+            .style("display", "inline")
+
+        d3.select("#message1")
+            .style("display", "none")
+
+        d3.select("#groupidx")
+            .style("display", "none")
+    }
+
+    // the global function to load next page, controlled by experimentSettings
+    function nextPage() {
+        if (globalDebugging)
+            console.log(data)
+
+        for (var i = 0; i < timeouts.length; i++) {
+            clearTimeout(timeouts[i]);
+        }
+        for (var i = 0; i < timeintervals.length; i++)
+            window.clearInterval(timeintervals[i]);
+        timeouts = []
+        timeintervals = []
+        experimentSettings.index += 1
+        // load the next one
+        var path = experimentSettings[settings.groupid][settings.day].pages[experimentSettings.index] // -_-
+        d3.select('#module').html('');
+        d3.select("#progressreport").style("display", "inline")
+        d3.select("#currentprogress").text((experimentSettings.index + 1))
+        d3.select("#allprogress").text(experimentSettings[settings.groupid][settings.day].pages.length)
+        d3.html(path, function (err, d) {
+            if (err) console.log(err);
+            d3.select('#module').node().appendChild(d);
+            d3.select("#partx").text(experimentSettings[settings.groupid][settings.day].indice[
+                    experimentSettings.index])
+                .attr("class", "h1")
+        });
+
+    }
+
+    function blurText() {
+        d3.selectAll(".blurtext")
+            .style("filter", "blur(5px)")
+            .on("mouseover", function () {
+                d3.select(this).style("filter", "none")
+            })
+            .on("mouseout", function () {
+                d3.select(this).style("filter", "blur(3px)")
+            })
+    }
+
+    // check if a file exists
+    function fileExists(url) {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        return http.status != 404;
+    }
+
+    function downloadData() {
+        var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+        var dlAnchorElem = document.getElementById('downloadAnchorElem');
+        var day = new Date()
+        dlAnchorElem.setAttribute("href", dataStr);
+        dlAnchorElem.setAttribute("download",
+            settings.userid + "-" + settings.day + "-" + settings.groupid + "-" +
+            day.getFullYear() + "-" + (day.getMonth() + 1) + "-" + day.getDate() + "-" + new Date().getTime().toString(
+                16) + ".json");
+        dlAnchorElem.click(); // fake a click
+    }
+</script>

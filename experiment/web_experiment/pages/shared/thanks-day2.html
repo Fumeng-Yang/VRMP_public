@@ -1,0 +1,13 @@
+<h1>Thanks!</h1>
+<p>The whole experiment is end. Thank you so much for your participation!</p>
+<button id="next-button">Submit!</button>
+<script>
+    data['timeStamps']['day2EndTime'] = new Date().getTime()
+    data['timeStamps']['day2DurationTime'] = data['timeStamps']['day2EndTime'] - data['timeStamps']['day2StartTime']
+
+    d3.select("#next-button")
+        .on("click", function () {
+            downloadData()
+            alert("Thanks!!")
+        })
+</script>

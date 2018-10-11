@@ -1,0 +1,63 @@
+039cdb8531233b5c056acf34a2b25f9ce21ec7bd81	039cdb8531213b5c056acf34a2b05f9ce21ec7bd83	039cdb8531203b5c056acf34a2bb5f9ce21ec7bd82	039cdb8531203b5c056acf34a2b65f9ce21ec7bd84	039cdb8531233b5c056acf34a3b25f9ce21ec7bd81	039cdb8531233b5c056acf34a3b05f9ce21ec7bd81	039cdb8531233b5c056acf34a3b35f9ce21ec7bd84	039cdb8531213b5c056acf34a3b45f9ce21ec7bd82	039cdb8531233b5c056acf34a3b65f9ce21ec7bd84	039cdb8531203b5c056acf34a3ba5f9ce21ec7bd84	039cdb8531233b5c056acf34a0b05f9ce21ec7bd82	039cdb8531233b5c056acf34a0b75f9ce21ec7bd82	039cdb8531203b5c056acf34a0b65f9ce21ec7bd82	
+group2#LUCKY01#g11#i1	group0#LUCKY03#g11#i3	group1#LUCKY08#g11#i2	group1#LUCKY05#g11#i4	group2#LUCKY11#g11#i1	group2#LUCKY13#g11#i1	group2#LUCKY10#g11#i4	group0#LUCKY17#g11#i2	group2#LUCKY15#g11#i4	group1#LUCKY19#g11#i4	group2#LUCKY23#g11#i2	group2#LUCKY24#g11#i2	group1#LUCKY25#g11#i2	
+
+039cdb8531233b5c056acf34a2b25f9ce21ec7bd81
+Tool use of rats (Rattus Norvegicus)
+In this study the authors tried to study whether it is possible to train rats to use or pick up tools in an experimental setup. The authors conducted three experiments. First one was to train the rats to use hook tool to get to food. The rats were successfully able to use this tool to get food. Second experiment was to train rats to use rake-shaped tool. They had both functional and non-functional rake shaped tools. These were significantly different in shape, texture from those tools used in experiment one. The rats always chose the functional rake tools. In experiment 3, the tools had a contradiction between appearance and functionality. In this case, the rats always chose non-functional ones. In other words, when there is a contradiction between appearance and functionality, the rats are not cognizant of it. The authors claim that this is because rats are cognizant of the spatial and physical representation of tools, food and self, when there is no contradiction.
+
+039cdb8531213b5c056acf34a2b05f9ce21ec7bd83
+Tool use in rats: rats use tools for functionality
+Rats were given the option between two tools in three experiments. The tool was a rake, and one rake was non-functioning with soft pieces and the other rake was functioning with hard pieces. The rats were able to select the functioning rake in experiments 1 and 2, when it was visibly apparent which rake was non-functioning. However, in experiment 3, the appearance of the rakes contradicted their functionality. In experiment 3, the rats chose the non-functioning rake that appeared to be functioning. This suggests that rats are able to distinguish a functioning rake from a non-functioning rake only when their appearance doesn't contradict their functionality. 
+
+039cdb8531203b5c056acf34a2bb5f9ce21ec7bd82
+Rats use tools to retrieve food if there is no contradiction
+Its difficult to observe how animals use tools in a controlled laboratory setting. Rats participated in three experiments:
+1. use tools to retrieve food: rats successfully retrieved the food depending on tools that were closest to the food
+2. there were two types of rakes: functional and non-functional (non-functional rakes because of wrong shape, color or texture) and rats consistently picked the functional rake over the non-functional one
+3. there were two types of rakes that had contradiction: one functional rake that had a transparent blade and one non-functional blade that had an opaque yet soft blade. The rats didn't know which one to chose.
+
+These three experiments indicate that rats know when and how to select functional tools if there is no contradiction.
+
+039cdb8531203b5c056acf34a2b65f9ce21ec7bd84
+Tool-selection in rats: tool-choice and tool function
+In Experiment 1, rats were trained to choose between types of hooks that corresponded to the shapes and strategy to access food, similar to experiments conducted with non-human primates. In Experiment 2, food-accessing rakes were varied in color, texture, and shape. Experiment 3 consisted of a functioning rake with a transparent blade versus a non-functioning rake with an opaque soft attachment. In Experiment 2, the rats successfully chose the functioning tools that could give them access to food, but in Experiment 3 the rats did not choose the functioning tool. This indicates that rats understand tool-choice and function until there is a discrepancy between the function and appearance of the tool.
+
+039cdb8531233b5c056acf34a3b25f9ce21ec7bd81
+Hooks, Tools, and Rats
+Experimenters tested how rats recognize tools. Using 3 trials, experimenters introduced in trial a functional tool and a nonfunctional tool. Respectively in trials 2 and 3, experimenters tested changed the shape, color, and texture of the tools, then only changed the color. Experimenters found in trial 2 that the rats were able tow discern the functional tool in spite of changes, while in trial 3 the rats were unable to do so. They found that their research supported that rats could distinguish between the functionality of different tools based on changes.
+
+039cdb8531233b5c056acf34a3b05f9ce21ec7bd81
+Tool use by rats: tool choice based on observed properties
+In this experiment, the authors trained rats to use tools in order to access food. In the first experiment, the rats were shown to successfully use the tool (a hook) to get the food. In the second experiment, the rats were presented with novel tools, one of which was suitable for the task (a rake). The rats were able to identify the suitable tool and use it without having been trained on it specifically. In the third experiment, the rats were presented with a tool which looked appropriate but wasn't (due to weak material) and another which didn't look appropriate but was (due to clear components). The rats chose the inappropriate tool, indicating that their tool choice was based on visual properties.
+
+039cdb8531233b5c056acf34a3b35f9ce21ec7bd84
+rats and tools: can rats learn to use tools and choose the appropriate ones
+The same method that is used to test apes was applied to rats. In the first experiment, a group of rats were tested to see if they were able to understand how to use a tool to 'fish out' food. They succeeded. For experiments 2 and 3, the tools were changed. In experiment 2, tools were changed in size, color, shape and texture while in experiment 3, the tools given did not function according to what they looked like. Rats were able to adapt and use the right tools in experiment 2, but in experiment 3 had had difficulty in being successful with the task. This shows that rats understand the relationship between tool, self and food when the tool in question is not deceiving in the way it looks vs what it actually does.
+
+039cdb8531213b5c056acf34a3b45f9ce21ec7bd82
+Tool-use in rats: contradiction between spatial information
+Three experiments were conducted to study the use of tools in rats to obtain food. In experiment 1, a hook was provided that could be used to obtain food - with enough training, rats learned to use this tool to successfully acquire food. In experiment 2, a choice was provided between the use of a functional and dysfunctional rake that could be used. All rats were able to use the functional rake to obtain food. In experiment 3, a contradiction was presented: a choice was provided between a tool with a transparent but functional blade and a tool with an opaque but soft blade. In this case, the rats were unable to use the functional tool to obtain food. This indicates that rats understood the relationship between the tool, the food and self when no such contradiction was present.
+
+039cdb8531233b5c056acf34a3b65f9ce21ec7bd84
+Tool use by rats- tool use based on functional appearance
+3 experiments- to determine tool use by Rats
+Experiment 1- use hook tool to be able to obtain food, use of tool taught to rats, and ability acquired to use functionally
+Experiment 2-choose between functional and non-functional tool to be able to obtain food(different tools from Experiment 1)-Rats were able to choose functional tool
+Experiment 3-Functionality of tool was contradictory to its appearance, and rats were unable to distinguish and choose functional tool based on contradictory apperance
+
+039cdb8531203b5c056acf34a3ba5f9ce21ec7bd84
+Tool choice for rats
+This study was meant to test whether rats could learn to use tools to get their food. First, they were given many tools and trained to pick out the functional tool. They all learned how to do this. In the second trial, the shape, color, and textures of the tools were changed. In the third trial, the functionalities and the appearances of the tools were switched. For example, a hook was changed to have a soft edge so that it could not hook anything. In the second trial, all rats chose the functional tool over the non-functional tool. However, in the third trial, none of the rats chose the functional tool. This shows that rats could distinguish between different tools, but could not figure out how to distinguish between functionality and appearance.
+
+039cdb8531233b5c056acf34a0b05f9ce21ec7bd82
+Can rats use tools: tool-based learning
+Experimenters tested whether or not rats could figure out how to use tools.  In experiment one, they gave rats hook shaped tools to get food, and with some training, they were able to learn how to get the food.  in experiments 2, they changed the tools color, shape and texture, and rats were still able to figure it out.  In the 3rd experiment, they made the tools the opposite of their function (one rake had a transparent hook that worked and the other had an opaque hook that didn't).  The rats were unable to distinguish in the third experiment and get the food with the right tool.
+
+039cdb8531233b5c056acf34a0b75f9ce21ec7bd82
+Tool use in rats: choosing between functionality and appearance
+An experiment was done to see if rats could be trained to discriminate between functional from non-functional tools with varying appearances. In Experiment 1, rats were trained to use hook-shaped tools to help them retrieve food. These rakes were of varying sizes, colors, and textures, and after some time the rats were trained to use these tools on their own and determine which were useful and which were not. In Experiment 2, the rats were given new rake tools that had different sizes, colors, and textures from those used in the previous experiment. The rats were successful in determining which rakes were functional and which would not help them with their task. In the final experiment, Experiment 3, rats were given a new set of tools, ones which had contradictory functionality with appearance. For example, they had a choice between a transparent functional tool and an opaque but soft rake that did not work. All of the rats failed this experiment and did not use the correct tool. The findings of these experiments show that rats are good at discriminating between functional and nonfunctional tools as long as there is no contradiction in their appearances.
+
+039cdb8531203b5c056acf34a0b65f9ce21ec7bd82
+Functional and nonfunctional tool discrimination in rats
+This experiment sought to determine whether rats were able to differentiate the functionality of tools based on their spatial and physical traits. There were three experiments. In the first experiment, rats were given spade-like tools to retrieve food. In the second experiment, the rats were given functional and nonfunctional tools, and had to discover which tools could be used to retrieve the food. In the third experiment, the rats were given tools where the spatial utility and physical appearance of the tools were reversed. They were issued a transparent tool that could be used functionally to retrieve food, as well as an opaque spade tool that could not be used functionally to retrieve food. In all three experiments , the rats were able to retrieve their food, which suggests that rats are able to discriminate tool functionality on the basis of spatial and physical dimensions.
+

@@ -1,0 +1,51 @@
+<div id="firstboard">
+    <h1> Part
+        <span id="partx">0</span> - Recall </h1>
+    <img src="../files/coffee_revisit.png" width="850px" alt="A generic coffee shop" align="middle">
+    <p>
+        Now, we ask you to write down what you can remember about the passages.
+        <br>
+        <p>
+            The tasks for your are,
+            <br>
+            <b>1) Write down your recalls of each passage separately by utilizing the imaginary visualizations you created yesterday;
+                </b>
+            <br />
+            <br />
+            <b>2) Sort them in the original order you saw. </b>
+            <br />
+            <br />
+            <b>3) Rate how vivid an illustration is.</b>
+        </p>
+        <p>
+            <u>The recalling guidelines</u>:
+            <br> Please recall by
+            <b>imagining you see the coffee shop, walking through the route, try to pick up the connections (visualizations) between
+                the locations and the passages. </b> What is it about? What are details in the visualization that reflect
+            the passage you read? In your recall, it is NOT necessary to reproduce the original wording. We want to see what
+            and how much you can remember after 24 hours. 
+            We don't check spelling and grammar, as long as we can recognize what you mean.
+        </p>
+
+        <p>
+            Click
+            <q>Next</q> to proceed. You have up to
+            <b>30 min</b> in the recall task on next page.
+        </p>
+
+</div>
+
+<div id="secondboard">
+    Write down what you can remember in each of the entries using the connections. Drag the entries to reorder them. You still
+    have
+    <span id="timer">30</span> min.
+    <ul id="sortable">
+    </ul>
+</div>
+
+<button id="next-button">Next</button>
+<script>
+    setTimeout(function () {
+        setupRecall("day2Recall", settings.target_abstracts)
+    }, experimentSettings.loadingTime)
+</script>

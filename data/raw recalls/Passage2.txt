@@ -1,0 +1,75 @@
+039cdb8531213b5c056acf34a2b05f9ce10c8de6	039cdb8531203b5c056acf34a2b15f9ce10c8de5	039cdb8531213b5c056acf34a2b75f9ce10c8de6	039cdb8531213b5c056acf34a2b45f9ce10c8de6	039cdb8531213b5c056acf34a2bb5f9ce10c8de0	039cdb8531233b5c056acf34a2ba5f9ce10c8de5	039cdb8531213b5c056acf34a3b25f9ce10c8de5	039cdb8531233b5c056acf34a3b35f9ce10c8de6	039cdb8531203b5c056acf34a3b55f9ce10c8de6	039cdb8531213b5c056acf34a3b65f9ce10c8de5	039cdb8531213b5c056acf34a3b45f9ce10c8de5	039cdb8531213b5c056acf34a3ba5f9ce10c8de7	039cdb8531233b5c056acf34a0b25f9ce10c8de7	039cdb8531233b5c056acf34a0b15f9ce10c8de5	039cdb8531233b5c056acf34a0b05f9ce10c8de7	039cdb8531233b5c056acf34a0b75f9ce10c8de0	039cdb8531213b5c056acf34a0b55f9ce10c8de0	039cdb8531213b5c056acf34a0b65f9ce10c8de5	
+group0#LUCKY03#g2#i2	group1#LUCKY02#g2#i1	group0#LUCKY04#g2#i2	group0#LUCKY07#g2#i2	group0#LUCKY08#g2#i4	group2#LUCKY09#g2#i1	group0#LUCKY11#g2#i1	group2#LUCKY10#g2#i2	group1#LUCKY16#g2#i2	group0#LUCKY15#g2#i1	group0#LUCKY17#g2#i1	group0#LUCKY19#g2#i3	group2#LUCKY21#g2#i3	group2#LUCKY22#g2#i1	group2#LUCKY23#g2#i3	group2#LUCKY24#g2#i4	group0#LUCKY26#g2#i4	group0#LUCKY25#g2#i1	
+
+039cdb8531213b5c056acf34a2b05f9ce10c8de6
+Spatial memory in Crayfish 
+Crayfish have proved to have good spatial relations. They were able to navigate a T Maze, consisting of various doors and passageways. Crayfish exhibited use of both memory recall and response learning. For example, some crayfish hung around a previously open exit in the maze, which suggests a kind of memory recall. Others seemed to respond by cued response learning. The crayfish who exhibited memory recall and the crayfish who seemed to react based on cued response were split 50/50. There was no significant difference between male and female crayfish. 
+
+039cdb8531203b5c056acf34a2b15f9ce10c8de5
+study of male and female crayfish: how spatial memory endures
+Animals have shown spatial memories in the past experiments. And this study is interested in how crayfish, both male and female, navigate through their space, and whether their spatial memory endures. In this experimental setting, a T-maze is used to test the crayfish. Additionally, in terms of spatial cues, both visual and hepatic cues are being used; and a food-scented tank is also used as reinforcement of learning in the task. In the multiple trials in the same day, results have shown that these fish are able to reduce their latency and their turns. Moreover, in a 40-minute enclosure test, results show that crayfish are more likely to stay in vicinity to a previously open exit than a closed one. In order to study which factor, i.e. the spatial cues or reinforced learning, contribute to their acquisition and spatial memory, a force-choice task is also conducted on the fish, and the results show that there are roughly equal amount of crayfish use each strategy, and some of them also switch in between different strategies when the perform the tasks. Moreover, in terms of the two sexes, there is no significant difference in terms of the dominant strategy that each sex employs. In the later tests within 24 hours, 48 hours, 72 hours and 1 week, results show that crayfish's spatial memory are enduring.
+
+039cdb8531213b5c056acf34a2b75f9ce10c8de6
+Spatial behavior in male and female crayfish: Spatial cues and routine learning
+Previous research on spatial behavior in animals has suggested that animals rely on both physical spatial cues and routine learning. This experiment used a T-maze in order to observe spatial behavior in male and female crayfish. Tactile and scented cues were placed around the maze to act as spatial cues, and a food-scented crate was placed outside the maze to act an incentive to exit. The crayfish demonstrated 
+
+039cdb8531213b5c056acf34a2b45f9ce10c8de6
+Crayfish remember spatial information
+Crayfish were found to have memory based on spatial information. In a study, there was a difference between spatial recall of crayfish under circumstances.
+
+039cdb8531213b5c056acf34a2bb5f9ce10c8de0
+Male and female crayfish spatial memory task
+Male and female crayfish were tasked to complete a T maze with food as the prize during several times in a single session and across several days to understand their spatial and place memory. These crayfish completed the maze faster and faster each time. These crayfish were noted to stay longer by closed-exits that were previously open for access than exits that remained closed. There was no difference in the male and female crayfish across the metrics. 
+
+039cdb8531233b5c056acf34a2ba5f9ce10c8de5
+Spatial behavior in male and female crayfish: learning and memory
+Animals employ many strategies for spatial learning and problem solving. Experimenters created a T-maze for crayfish to navigate based on visual and tactile stimuli, with the exit of the maze indicated to the crayfish by food smell. The crayfish demonstrated success in exiting the maze in trials over a single day as well as over multiple days. In order to test short-term memory, 40-minute trials were run. Probes were employed to test whether the crayfish relied on visual cues or response learning. The test showed that equal numbers of crayfish employed both methods, and that individual crayfish were able to utilize either method in a single test. Male and female crayfish demonstrated the same level of success. Both showed greater likelihood to linger around an exit that was previously open as opposed to one that was previously closed. The crayfish showed repeated success over repeated trials with 24 hr, 48 hr, 72 hr, and one week on between interactions with the maze, indicating that crayfish may have very enduring spatial memory.
+
+039cdb8531213b5c056acf34a3b25f9ce10c8de5
+Crayfish Detective
+Crayfish were tested on two forms of problem solving, spatial and placement memory, using food as a memory reinforce. In multiple 40 minute trials the fish were put through T-Maze over several days. The researchers observed that both forms of memory were utilized equally and that gender made little difference in performance
+
+039cdb8531233b5c056acf34a3b35f9ce10c8de6
+Spacial behavior in male and female crayfish
+Spacial behavior and learning ability of crayfish was tested using several methods. The first, which employed using food and paths, and seeing whether crayfish were able to find their way out a maze, found that crayfish were not only successful in the task but could remember the location of the exit. In consequent sessions, crayfish would stay longer where there previously was an exit rather that somewhere where there wasn't. Crayfish also went through a probe test, and were tested in different time intervals to see if their spacial memory lasted. This showed that within 24hours, 28 hours, 72hours and a week, their spacial memory persisted. There was also not a notable difference between male and female crayfish.
+
+039cdb8531203b5c056acf34a3b55f9ce10c8de6
+Crayfish's spatial memory and the duration for which they retain aspects of it.
+Male and female crayfish were gathered into a T-maze. Three kinds of tasks were organized. First, they were tested on their ability to navigate/exit the maze given certain visual cues and the motivating smell of a food tank near the exit. It was observed that in this task, in trials on the same day, crayfish remembered how to get about the tank with fewer turns and greater speed. Second, they were tested in a closed maze, to see where they would hover to find exits. It was found that most crayfish hovered around a previously open exit longer than on a current exit that is closed. These results didn't seem to differ much over the sex of the crayfish. Third, there were probe tests on the crayfish, and they were tested over 24 hour, 48 hour, and 1 week intervals to see how long they remembered solutions to the mazes they went through, and it seemed that crayfish could remember the path for up to a week. 
+
+039cdb8531213b5c056acf34a3b65f9ce10c8de5
+Crayfish(male of female) which will respond better to tasks of spatial memory and memory duration? using multiple strategies
+Animals use multiple strategies in order to remember things. In crayfish, T maze was used for spatial learning, visual and tactile cues were used for place memory and a food incentive in order to exit the maze. Trials completed from one day, over multiple days. in trials after the first 24hrs, crayfish able to complete the maze with reduced latency and less turns. Place memory- stayed in places of the maze longer where there had been an open exit, as opposed to when it was closed. strategies of recall using place memory and the cues were used to navigate through the maze by both males and females. Also, different crayfish used different strategies on different days. No difference between sexes, and shows that multiple strategies used for recall by crayfish. 
+
+039cdb8531213b5c056acf34a3b45f9ce10c8de5
+Spatial awareness in crayfish: learning techniques and memory duration
+To test the spatial awareness in crayfish, a T-maze was set up with visual and tactile stimuli as place cues and food-scented paths to encourage the crayfish to exit the maze. In test conducted both in a single day and over successive days, it was found that the time taken by the crayfish to exit the maze reduced. In addition, crayfish spent more time near exits that were previously open when compared to other portions of the maze. Probe tests were conducted to test if the crayfish used place cues or response learning to learn and retain spatial information - it was found that an approximately equal number of crayfish used either strategy, and that individual specimen could change strategies. No significant difference was found between the performance of male and female crayfish. Latency of success reduced over the course of 24 hour, 48 hour and 1 week test, indicating that the crayfish could retain learned information.
+
+039cdb8531213b5c056acf34a3ba5f9ce10c8de7
+Spatial behavior in male and female crayfish: learning strategies and memory duration
+There has been a lot of studies on the spacial abilities of various animals. In this study, T-mazes were utilized as well as various stimuli to guide the crayfish through the maze. Crayfish were placed in a maze and had to find their way to the exit. The results showed that the crayfish rapidly improved over the duration of time and got better at finding the exit. Furthermore, when the exit was closed off, the crayfish spent a lot of time around the closed exits. Also, the crayfish were subjected to two tests: place cues and ... They did well on both of these tests. Additionally, when the crayfish were tested over the course of 24 hours, 48 hours, 72 hours, and 1 week, their memory remained. There were no major differences between the male and female crayfish. These results show that crayfish have good spatial memory.
+
+039cdb8531233b5c056acf34a0b25f9ce10c8de7
+Male and female crayfish can learn and remember how to solve a maze.
+In this experiment, male and female crayfish were placed in a T-maze and had to find their way to exits based on place recognition and learned response. It was observed that when the exits of the maze were closed for 40 minutes, the crayfish lingered more by the exits than in other areas. With the exits open, the ability of the crayfish to navigate the maze in less time and with fewer wrong turns improved with practice, and experiments after 24 hours, 48 hours, 72 hours, and 1 week showed that they retained the solution to the maze in their memories. There was no significant difference between the performance of the male and female crayfish.
+
+039cdb8531233b5c056acf34a0b15f9ce10c8de5
+Spatial understanding of crayfish
+Animals are known to use varied skills to solve spatial tasks. In this experiment, crayfish were put in a T-maze with tactile and visual stimuli with a food-scented escape tank near the exit to motivate them to escape. On time scales of one to a few days after the training period, crayfish were tested on their ability to solve the maze and were found to solve the maze more efficiently, showing that crayfish are spatially aware. Furthermore, crayfish spent significantly more time near a previously open exit than an exit that had always been closed. There was found to be no difference between male and female crayfish, and both were able to successfully complete the task.
+
+039cdb8531233b5c056acf34a0b05f9ce10c8de7
+Can crayfish have spatial awareness
+For this experiment, researchers put male and female crayfish through a T maze to see if they could get out.  They used scented tanks to lure them out, and the fish improved latency and made fewer turns.  When they took away the exits, the fish still stayed near where the exit was opened for more time than where the exits were closed.  Next, the tried different experiments over different days, and discovered that the fish were able to change strategies day by day. There was no difference in male and female crayfish.
+
+039cdb8531233b5c056acf34a0b75f9ce10c8de0
+Time and spatial memory in crayfish
+Crayfish were tested to see how long their temporal memory lasts, as well as whether they have a strong sense of spatial memory. They were trained to conduct T-maze tasks with various exits covered and opened in different iterations of the same test. It was measured that the crayfish would spend more time near a previously open exit in a successive test than they would near one that was previously closed. This indicates that they have an understanding of spatial memory and are prone to remembering where things are location-wise. Additionally, tests were given to them in different intervals, some 24, 48, and 72 hours after the first ones. It was noted that their memory of how to solve the mazes dropped each time, and their temporal memory was able to be quantified in this manner.
+
+039cdb8531213b5c056acf34a0b55f9ce10c8de0
+Crayfish - how do they deal with spatiality? 
+A group of crayfish were tested to see whether or not they were capable of recognizing particular pathways through sensory cues, such as visual landmarks or smell. The crayfish were generally successful, and there was no clear divergence based on gender or size. 
+
+039cdb8531213b5c056acf34a0b65f9ce10c8de5
+Extent of crayfish recall and reduced latency.
+The experiment sought to determine the factors which determined whether crayfish were able to navigate their way out of a T-shaped maze, and the extent of recall after such training had occurred. Crayfish were placed in a T-shaped maze, with a box of food used to incentivize them toward the entrance. It was found that during repeated trials, crayfish would lurk or remain at previous exit points for a longer period of time. Furthermore, crayfish were found to have reduced latency in exiting the maze 24H, 48H, 72H and 1W after the experiment had concluded, thus demonstrating that the crayfish had a degree of recall capabilities.
+
