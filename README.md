@@ -1,8 +1,8 @@
-# A Virtual Reality Memory Palace Aids Knowledge Retrieval
+# A Virtual Reality Memory Palace Aids Knowledge Retrieval from Scientific Publication
 
-This repository contains experimental materials, data, and analysis code for the manuscript ``A Virtual Reality Memory Palace Aids Knowledge Retrieval`` by Fumeng Yang, Jing Qian, Johannes Novotny, David Badre, Cullen D. Jackson, and David H. Laidlaw.
+This repository contains experimental materials, data, analysis code, and videos for the manuscript ``A Virtual Reality Memory Palace Aids Knowledge Retrieval from Scientific Publication`` by Fumeng Yang, Jing Qian, Johannes Novotny, David Badre, Cullen D. Jackson, and David H. Laidlaw.
 
-This repository contains large files and uses [git lfs](https://git-lfs.github.com/) to manage the large files.
+This repository contains large files and uses [git lfs](https://git-lfs.github.com/) to manage and access the large files.
 
 ## Folder: experiment
 
@@ -32,4 +32,14 @@ The logged movements and events from the HMD.
 The main (entry) file is main.R. All the dependencies have been specified in helper.R.
 
 The R scripts take the inputs from the data folder.
+
+## Folder: videos
+
+#### README-Video
+
+It contains a transcript of each video.
+
+#### Control-Video.mp4, IMMP-Video.mp4, and VRMP-Video.mp4
+
+The videos to show the flow of the three conditions, respectively.
 
