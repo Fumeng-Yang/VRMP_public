@@ -1,6 +1,6 @@
-# A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholar Articles
+# A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles
 
-This repository contains experimental materials, data, analysis code, and videos for the manuscript ``A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholar Articles`` by Fumeng Yang, Jing Qian, Johannes Novotny, David Badre, Cullen D. Jackson, and David H. Laidlaw.
+This repository contains experimental materials, data, analysis code, and videos for the manuscript ``A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles`` by Fumeng Yang, Jing Qian, Johannes Novotny, David Badre, Cullen D. Jackson, and David H. Laidlaw.
 
 This repository contains large files and uses [git lfs](https://git-lfs.github.com/) to manage and access the large files.
 
