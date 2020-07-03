@@ -1,0 +1,282 @@
+---
+title: "locomotion VR MP"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list = ls(all.names = TRUE)) 
+```
+
+
+```{r}
+library(ggpubr)
+library(tidyverse)
+library(ggthemes)
+```
+
+```{r}
+d_in <- read.csv(file = "../data/vrmp_data.csv", header = T, stringsAsFactors = T)
+d_mem_in <- read.csv(file = "../data/meta/all.csv", header = T, stringsAsFactors = T)
+d_mem <- d_mem_in %>% 
+    filter(groupid == "VRMP") %>%
+    mutate(rate = totalCorrectIdeas / totalOrigIdeas)%>%
+    arrange(rate) %>%               # sort your dataframe
+    mutate(id = factor(id, unique(id))) %>%  # reset your factor-column based on that order
+    mutate(speed = runif(13, 0, 1))%>%
+    select(rate, speed, id)%>%
+    mutate(device = "memory")%>%
+    droplevels()
+```
+
+
+```{r}
+library(extrafont)
+font_import()
+loadfonts()
+
+#library(showtext)
+#font_add_google(family = "sans-serif", name = "Open Sans")
+```
+
+```{r}
+DOT_SIZE <- 1.5
+LINE_SIZE_LIGHT <- 0.2
+LINE_SIZE <- 0.5
+LINE_SIZE_WIDE <- 1
+FONT_SIZE_SMALL <- 6
+FONT_SIZE <- 8
+FONT_SIZE_BIG <- 12
+BCKGDCOLOR <- "#FFFFFF"
+TEXTCOLOR <- "#444444"
+LINE_COLOR <- "#444444"
+LINE_COLOR_LIGHT <- "#dddddd"
+
+PALETTE <- c("#6298f5", "#ed80ae", "#faa970", "#71bf76", "#999999") 
+
+my_theme <- theme(
+                                      #line,
+                                      #rect,
+                                      #text,
+ title = element_text(size = FONT_SIZE_BIG, face = "bold", colour = TEXTCOLOR, family = "Open Sans"), 
+                                      #aspect.ratio,
+  axis.title.x = element_text(size = FONT_SIZE, face = "bold", colour = TEXTCOLOR, family = "Open Sans"), 
+  axis.title.y = element_text(size = FONT_SIZE, face = "bold", colour = TEXTCOLOR, angle = 90, family = "Open Sans"), 
+                                      #?axis.title.x.top,
+                                      #?axis.title.x.bottom,
+  axis.text = element_text(size = FONT_SIZE_SMALL - 2, face = "plain", colour = TEXTCOLOR,  family = "Open Sans"), 
+                                      #?axis.title.y.left,
+                                      #?axis.title.y.right,
+  #axis.text.x,
+                                      #?axis.text.x.top,
+                                      #?axis.text.x.bottom,
+  #axis.text.y,
+                                      #?axis.text.y.left,
+                                      #?axis.text.y.right,
+  axis.ticks = element_line(colour = LINE_COLOR, size = LINE_SIZE_LIGHT, linetype = "solid"),
+  #axis.ticks.x,
+                                      #?axis.ticks.x.top,
+                                      #?axis.ticks.x.bottom,
+  #axis.ticks.y,
+                                      #?axis.ticks.y.left,
+                                      #?axis.ticks.y.right,
+  axis.ticks.length = unit(.1, "lines"),
+  #axis.ticks.length.x,
+                                      #?axis.ticks.length.x.top,
+                                      #?axis.ticks.length.x.bottom,
+  #axis.ticks.length.y,
+                                      #?axis.ticks.length.y.left,
+                                      #?axis.ticks.length.y.right,
+  axis.line = element_blank(), #element_line(colour = LINE_COLOR, size = LINE_SIZE_LIGHT, linetype = "solid"),
+  #axis.line.x,
+                                      #?axis.line.x.top,
+                                      #?axis.line.x.bottom,
+  #axis.line.y,
+                                      #?axis.line.y.left,
+                                      #?axis.line.y.right,
+  legend.background = element_blank(),
+  legend.margin = margin(.1, .1, .1, .1),
+  legend.spacing = unit(0.5, "lines"),
+                                      #?legend.spacing.x,
+                                      #?legend.spacing.y,
+  legend.key = element_blank(),
+  legend.key.size = unit(1, "lines"),
+  #legend.key.height,
+  #legend.key.width,
+  legend.text = element_text(size = FONT_SIZE_SMALL, face = "plain", colour = TEXTCOLOR, family = "Open Sans"),
+  legend.text.align = 0,#left
+  legend.title = element_text(size = FONT_SIZE_SMALL, face = "plain", colour = TEXTCOLOR, family = "Open Sans"),
+  legend.title.align = 0,#left
+  legend.position = "none",
+  #legend.direction, #auto
+ # legend.justification = "top",
+  #legend.box = element_rect(fill = NA, colour = LINE_COLOR, size = 0.1), #auto
+  #legend.box.just = "top", # because of bottom
+ # legend.box.margin = margin(1, 1, 1, 1),
+ # legend.box.background = element_blank(),
+ # legend.box.spacing = unit(0.1, "lines"),
+  panel.background = element_blank(),
+  panel.border = element_blank(),#element_rect(fill = NA, colour = LINE_COLOR, size = 0.1),
+  panel.spacing = unit(0.1, "lines"),
+  #panel.spacing.x,
+  #panel.spacing.y,
+  #panel.grid,
+  #panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  panel.grid.major = element_line(colour = LINE_COLOR_LIGHT, size = LINE_SIZE_LIGHT / 2, linetype = "solid"),
+  #panel.grid.major.y,
+  #panel.grid.minor.x,
+  #panel.grid.minor.y, 
+  panel.ontop = FALSE,
+  plot.background = element_blank(),
+  plot.title  = element_text(size = FONT_SIZE_BIG, face = "bold", colour = TEXTCOLOR, family = "Open Sans"),
+  #?plot.title.position,
+  #plot.subtitle,
+  plot.caption = element_text(size = FONT_SIZE_BIG, face = "bold", colour = TEXTCOLOR, family = "Open Sans"),
+  #?plot.caption.position,
+  #?plot.tag,
+  plot.tag.position = "top",
+  plot.margin = margin(1, 1, 1, 1),
+  strip.background = element_blank(),
+  #strip.background.x,
+  #strip.background.y,
+  strip.placement = "outside",
+  strip.text = element_text(size = FONT_SIZE, face = "bold", colour = TEXTCOLOR, family = "Open Sans"),
+  #strip.text.x,
+  #strip.text.y,
+  #strip.switch.pad.grid,
+  #strip.switch.pad.wrap,
+  complete = FALSE,
+  validate = TRUE
+)
+
+theme_set(my_theme)
+
+
+concatStr <- function(arr, sep_in = ""){
+  l <- length(arr)
+  if(l > 1)
+    return(paste(concatStr(arr[1:l-1], sep = sep_in),arr[l], sep = sep_in))
+  else
+    return(arr[l])
+}
+
+```
+
+```{r}
+df <- d_in %>% 
+    arrange(time) %>%
+    mutate(x_jitted = jitter(x, factor = 0.1)) %>%
+    mutate(y_jitted = jitter(y, factor = 0.1)) %>%
+    mutate(z_jitted = jitter(z, factor = 0.1) ) %>%
+    group_by(device, id) %>%
+    mutate(duration = (max(time) - min(time)) / 60000 ) %>%
+    mutate(delta_x = x - lag(x, default = x[1])) %>%
+    mutate(delta_y = y - lag(y, default = y[1])) %>%
+    mutate(delta_z = z - lag(z, default = z[1])) %>%
+    mutate(delta_distance = sqrt(delta_x * delta_x + delta_y * delta_y + delta_z * delta_z)) %>%
+    mutate(cum_distance = cumsum(delta_distance))%>%
+    mutate(cum_distance_time = cum_distance / duration)%>%
+    ungroup()%>%
+    mutate(id = factor(id, levels = levels(d_mem$id)))
+    
+
+df_speed <- df %>%
+    group_by(device, id) %>%
+    dplyr::summarise(speed = max(cum_distance_time))%>%
+    ungroup()
+  
+df_distance <- df %>%
+    group_by(device, id) %>%
+    dplyr::summarise(rate = max(cum_distance))%>%
+    ungroup()
+
+df_reduce <- df_speed %>%
+    bind_cols(df_distance)
+
+
+d_mem <-  d_mem %>%
+    ungroup()%>%
+    mutate(max_rate = max(rate))%>%
+    mutate(min_rate = min(rate))%>%
+    mutate(max_speed = max(speed))%>%
+    mutate(min_speed = min(speed))%>%
+    mutate(rate_scale = (rate - min_rate) / (max_rate - min_rate)) %>%
+    mutate(speed_scale = (speed - min_speed) / (max_speed - min_speed))
+
+df_reduce <- df_reduce%>%
+    ungroup()%>%
+    mutate(max_rate = max(rate))%>%
+    mutate(min_rate = min(rate))%>%
+    mutate(max_speed = max(speed))%>%
+    mutate(min_speed = min(speed))%>%
+    mutate(rate_scale = (rate - min_rate) / (max_rate - min_rate)) %>%
+    mutate(speed_scale = (speed - min_speed) / (max_speed - min_speed)) %>%
+    mutate(device = factor(device, levels = c(levels(device),"memory")))%>%
+    bind_rows(d_mem)
+```
+
+
+```{r}
+
+
+df_camera <- df %>% filter(device == "Camera") %>% droplevels()
+df_left <- df %>% filter(device == "Controllerleft") %>% droplevels()
+df_right <- df %>% filter(device == "Controllerright") %>% droplevels()
+
+g_camera <- ggplot(df, mapping = aes(x = x_jitted, y = z_jitted)) %>%
+    + scale_x_continuous(expand = c(0,0), limits = c(-4.5, 4.5), breaks = seq(-4, 4, by = 2)) %>%
+    + scale_y_continuous(expand = c(0,0), limits = c(-2.5, 2.5), breaks = seq(-2, 2, by = 2)) %>%
+    + stat_density_2d(aes(fill = after_stat(level)), geom = "polygon", color = "#4E79A7", size = 0.05) %>% #, geom = "raster",  fill =  (after_stat(density))^0.3
+    + scale_fill_gradient(high = "#4E79A7", low = "white") %>%
+    + facet_grid(id ~ .)
+
+
+g_left <- ggplot(df_left, mapping = aes(x = x_jitted, y = y_jitted)) %>%
+    + scale_x_continuous(expand = c(0,0), limits = c(-4.5, 4.5), breaks = seq(-4, 4, by = 2)) %>%
+    + scale_y_continuous(expand = c(0,0), limits = c(-.5, 2), breaks = seq(-1.5, 1.5, by = 1.5)) %>%
+    + stat_density_2d(aes(fill = after_stat(level)), geom = "polygon", color = "#F28E2B",  size = 0.05) %>% 
+    + scale_fill_gradient(high = "#F28E2B", low = "white") %>%
+    + facet_grid(id ~ .)
+
+
+g_right <- ggplot(df_right, mapping = aes(x = x_jitted, y = y_jitted)) %>%
+    + scale_x_continuous(expand = c(0,0), limits = c(-4.5, 4.5), breaks = seq(-4, 4, by = 2)) %>%
+    + scale_y_continuous(expand = c(0,0), limits = c(-.5, 2), breaks = seq(-1.5, 1.5, by = 1.5)) %>%
+    + stat_density_2d(aes(fill = after_stat(level)), geom = "polygon", color = "#E15759", size = 0.05) %>% 
+    + scale_fill_gradient(high = "#E15759", low = "white") %>%
+    + facet_grid(id ~ .)
+
+
+g_distance <- ggplot(df_reduce) %>%
+    + geom_point(mapping = aes(y = rate_scale, x = fct_rev(id), color = device), size = 1) %>%
+    + geom_path(mapping = aes(y = rate_scale, x = fct_rev(id), group = device, color = device), alpha = .2, size = 0.5)%>%
+    + geom_point(mapping = aes(y = speed_scale, x = fct_rev(id), color = device), size = 1, shape = 17) %>%
+    + geom_path(mapping = aes(y = speed_scale, x = fct_rev(id), group = device, color = device), alpha = .2, size = 0.5, shape = 17)%>%
+    + scale_colour_tableau(palette = "Tableau 10") %>%
+    + scale_y_continuous(expand = c(0.05,0.05)) %>%
+    + scale_x_discrete(expand = c(0.05,0.05)) %>%
+    + coord_flip()
+
+
+g_lo_dis <- ggarrange(g_camera, g_left, g_right, g_distance, ncol = 4, widths = c(1, 1, 1, 1), heights = c(1,1,1,0.8))
+
+ggsave(filename = "img/locomotion-distance.pdf", g_lo_dis, width = 6, height = 7, units = "in", useDingbats = FALSE)
+
+d_camera <- df_reduce %>% filter(device == "Camera") %>% droplevels()
+d_left <- df_reduce %>% filter(device == "Controllerleft") %>% droplevels()
+d_right <- df_reduce %>% filter(device == "Controllerright") %>% droplevels()
+d_mem <- df_reduce %>% filter(device == "memory") %>% droplevels()
+
+d_camera <- unlist(d_camera[['speed_scale']])
+d_left <- unlist(d_left[['speed_scale']])
+d_right <- unlist(d_right[['speed_scale']])
+d_mem <- unlist(d_mem[['rate_scale']])
+
+cor(d_camera, d_mem)
+cor(d_left, d_mem)
+cor(d_right, d_mem)
+
+
+```
+
