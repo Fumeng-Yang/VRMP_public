@@ -49,12 +49,12 @@ It contains a transcript of each video.
 The videos to show the flow of the three conditions, respectively.
 
 ## bibtex (temporary)
-@article{yang2020vrmemorypalace,
-  title={A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles},
-  author={Yang, Fumeng and Jing, Qian and Novotny, Johannes, and Badre, David, and Jackson, Cullen D., and Laidlaw, David H..  
-  journal={IEEE transactions on visualization and computer graphics},
-  doi={10.1109/TVCG.2020.3009003}
-  year={2020},
-  publisher={IEEE}
+@article{yang2020vrmemorypalace,  
+  title={A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles},   
+  author={Yang, Fumeng and Jing, Qian and Novotny, Johannes, and Badre, David, and Jackson, Cullen D., and Laidlaw, David H.},      
+  journal={IEEE transactions on visualization and computer graphics},   
+  doi={10.1109/TVCG.2020.3009003},   
+  year={2020},   
+  publisher={IEEE}   
 }
 
