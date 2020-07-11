@@ -1,9 +1,10 @@
-# A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles
-
-This repository provides experimental materials, data, analysis code, and videos for the paper *A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles*.
+# A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles (in press)
 
 Authors: Fumeng Yang, Jing Qian, Johannes Novotny, David Badre, Cullen D. Jackson, and David H. Laidlaw.  
+
 DOI: 10.1109/TVCG.2020.3009003
+
+This repository provides experimental materials, data, analysis code, and videos.
 
 This repository contains large files and uses [git lfs](https://git-lfs.github.com/) to manage and access the large files.
 The VR experimental system is up to 7GB. If you need this system or a part of it, please email us.
@@ -46,4 +47,14 @@ It contains a transcript of each video.
 #### Control-Video.mp4, IMMP-Video.mp4, and VRMP-Video.mp4
 
 The videos to show the flow of the three conditions, respectively.
+
+## bibtex (temporary)
+@article{yang2020vrmemorypalace,
+  title={A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles},
+  author={Yang, Fumeng and Jing, Qian and Novotny, Johannes, and Badre, David, and Jackson, Cullen D., and Laidlaw, David H..  
+  journal={IEEE transactions on visualization and computer graphics},
+  doi={10.1109/TVCG.2020.3009003}
+  year={2020},
+  publisher={IEEE}
+}
 
