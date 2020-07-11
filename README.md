@@ -4,7 +4,7 @@ This repository provides experimental materials, data, analysis code, and videos
 
 This repository contains large files and uses [git lfs](https://git-lfs.github.com/) to manage and access the large files.
 
-The VR experimental system is up to 7GB. If you need this system or a part of it, please email us.
+The VR experimental system is up to 7GB. If you need this system or a part of it, please email fy at brown.edu.
 
 ## Folder: experiment
 
