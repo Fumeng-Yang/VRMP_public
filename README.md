@@ -1,8 +1,19 @@
 # A Virtual Reality Memory Palace Variant Aids Knowledge Retrieval from Scholarly Articles (in press)
 
-Authors: Fumeng Yang, Jing Qian, Johannes Novotny, David Badre, Cullen D. Jackson, and David H. Laidlaw.  
+**Authors**: Fumeng Yang, Jing Qian, Johannes Novotny, David Badre, Cullen D. Jackson, and David H. Laidlaw.  
 
-DOI: 10.1109/TVCG.2020.3009003
+**DOI**: 10.1109/TVCG.2020.3009003
+
+**Abstract**: We present exploratory research of virtual reality techniques and mnemonic devices to assist in retrieving knowledge from
+scholarly articles. We used abstracts of scientific publications to represent knowledge in scholarly articles; participants were asked to
+read, remember, and retrieve knowledge from a set of abstracts. We conducted an experiment to compare participants’ recall and
+recognition performance in three different conditions: a control condition without a pre-specified strategy to test baseline individual
+memory ability, a condition using an image-based variant of a mnemonic called a “memory palace,” and a condition using a virtual
+reality-based variant of a memory palace. Our analyses show that using a virtual reality-based memory palace variant greatly
+increased the amount of knowledge retrieved and retained over the baseline, and it shows a moderate improvement over the other
+image-based memory palace variant. Anecdotal feedback from participants suggested that personalizing a memory palace variant
+would be appreciated. Our results support the value of virtual reality for some high-level cognitive tasks and help improve future
+applications of virtual reality and visualization.
 
 This repository provides experimental materials, data, analysis code, and videos.
 
